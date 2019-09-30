@@ -6,7 +6,7 @@ import { wait } from '@/utils/wait';
 export async function repeatRaidTeamm(): Promise<void> {
   tryClickImage(img.teamReadyButton);
   tryClickImage(img.startBattleButton);
-  await wait(2500);
+  await wait(3000);
   tryClickImage(img.stillStartButton);
   tryClickImage(img.closeButton);
   tryClickImage(img.autoBattleSwitchOff);

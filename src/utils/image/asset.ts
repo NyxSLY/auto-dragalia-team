@@ -1,9 +1,10 @@
 import { assets } from '@/assets/images';
 import lodashSortby from 'lodash.sortby';
+import { img } from '@/assets/images';
 
 export function loadAssets(name: string): void {
   toastLog(`Load assets: ${name}`);
-  Object.assign(images, assets[name]);
+  Object.assign(img, assets[name]);
 }
 
 export function getAssetByResolution(
