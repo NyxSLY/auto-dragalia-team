@@ -14,11 +14,11 @@ export async function waitForEnemy(): Promise<void> {
 
 export async function transform2dragon(): Promise<void> {
   const pos: Point = findImage(img.transformGaugeFull);
-  await waitForEnemy();
+  // await waitForEnemy();
   console.log('龙化');
   click(pos.x + 100, pos.y);
   await wait(2500);
-  await waitForEnemy();
+  // await waitForEnemy();
   console.log('使用龙技能');
   click(pos.x + 360, pos.y + 300);
 }

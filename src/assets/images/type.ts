@@ -20,6 +20,7 @@ export type ImageAssets = Readonly<
     | 'loadingText'
     | 'lv29Button'
     | 'menuButton'
+    | 'nextBattleBlue'
     | 'nextText'
     | 'okButton'
     | 'presentButton'
@@ -34,9 +35,11 @@ export type ImageAssets = Readonly<
     | 'retryButtonBlue'
     | 'retryButtonRed'
     | 'startBattleButton'
+    | 'stillStartButton'
     | 'supportSelectButton'
     | 'supportSkillAvailable'
     | 'tapButton'
+    | 'teamReadyButton'
     | 'transformGaugeFull'
     | 'x0',
     Image
