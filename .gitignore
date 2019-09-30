@@ -2,5 +2,5 @@
 /yarn.lock
 yarn-error.log
 /captures
-
+/test
 /.vscode/settings.json

@@ -3168,7 +3168,7 @@
           switch (A.label) {
             case 0:
               return (
-                vA(AA.teamReadyButton), vA(AA.startBattleButton), [4, aA(2500)]
+                vA(AA.teamReadyButton), vA(AA.startBattleButton), [4, aA(3e3)]
               );
             case 1:
               return (
@@ -3532,7 +3532,7 @@
       });
     }
     var Ee =
-        '<frame gravity="center">\r\n    <spinner id="taskSpinner" entries="${entries}" spinnerMode="dialog" bg="#77ffffff" />\r\n</frame>',
+        '<frame gravity="center">\n    <spinner id="taskSpinner" entries="${entries}" spinnerMode="dialog" bg="#77ffffff" />\n</frame>',
       ze = function() {
         for (var A = 0, e = 0, t = arguments.length; e < t; e++)
           A += arguments[e].length;
@@ -3733,7 +3733,7 @@
                 })[0].name;
               })()),
               toastLog('Load assets: ' + t),
-              Object.assign(images, $[t]),
+              Object.assign(AA, $[t]),
               [4, ge()]
             );
           case 2:
