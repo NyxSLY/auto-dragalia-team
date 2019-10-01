@@ -53,7 +53,7 @@
     g((g.s = 47));
 })([
   function(A) {
-    A.exports = JSON.parse('{"a":"auto-dragalia-slsy","b":"0.1.2"}');
+    A.exports = JSON.parse('{"a":"auto-dragalia-slsy","b":"0.1.3"}');
   },
   function(A, I) {
     A.exports =
@@ -2771,7 +2771,9 @@
         return GA(this, function(A) {
           switch (A.label) {
             case 0:
-              return lA(IA.teamReadyButton), [4, yA()];
+              return (
+                lA(IA.teamReadyButton), toastLog('----测试一下----'), [4, yA()]
+              );
             case 1:
               return A.sent(), [2];
           }
