@@ -251,8 +251,8 @@
         E = '[object Error]',
         a = '[object Function]',
         i = '[object GeneratorFunction]',
-        V = '[object Map]',
-        o = '[object Number]',
+        o = '[object Map]',
+        V = '[object Number]',
         c = '[object Object]',
         Q = '[object RegExp]',
         U = '[object Set]',
@@ -275,8 +275,8 @@
       ] = s['[object Uint8ClampedArray]'] = s['[object Uint16Array]'] = s[
         '[object Uint32Array]'
       ] = !0),
-        (s[u] = s[l] = s[T] = s[P] = s[R] = s[z] = s[E] = s[a] = s[V] = s[
-          o
+        (s[u] = s[l] = s[T] = s[P] = s[R] = s[z] = s[E] = s[a] = s[o] = s[
+          V
         ] = s[c] = s[Q] = s[U] = s[d] = s['[object WeakMap]'] = !1);
       var S = 'object' == typeof A && A && A.Object === Object && A,
         O = 'object' == typeof self && self && self.Object === Object && self,
@@ -388,14 +388,14 @@
         EA = Math.max,
         aA = HA(J, 'DataView'),
         iA = HA(J, 'Map'),
-        VA = HA(J, 'Promise'),
-        oA = HA(J, 'Set'),
+        oA = HA(J, 'Promise'),
+        VA = HA(J, 'Set'),
         cA = HA(J, 'WeakMap'),
         QA = HA(Object, 'create'),
         UA = eI(aA),
         dA = eI(iA),
-        bA = eI(VA),
-        TA = eI(oA),
+        bA = eI(oA),
+        TA = eI(VA),
         RA = eI(cA),
         jA = fA ? fA.prototype : void 0,
         pA = jA ? jA.valueOf : void 0,
@@ -582,7 +582,7 @@
       function hA(A, I, g, C, t) {
         return (
           A === I ||
-          (null == A || null == I || (!iI(A) && !VI(I))
+          (null == A || null == I || (!iI(A) && !oI(I))
             ? A != A && I != I
             : (function(A, I, g, C, t, v) {
                 var f = PI(A),
@@ -615,14 +615,14 @@
                               );
                             case P:
                             case z:
-                            case o:
+                            case V:
                               return uI(+A, +I);
                             case E:
                               return A.name == I.name && A.message == I.message;
                             case Q:
                             case d:
                               return A == I + '';
-                            case V:
+                            case o:
                               var r = y;
                             case U:
                               var u = v & e;
@@ -670,10 +670,10 @@
                     for (; ++l < r; ) {
                       P = f[l];
                       var i = A[P],
-                        V = I[P];
+                        o = I[P];
                       if (C)
-                        var o = n ? C(V, i, P, I, A, v) : C(i, V, P, A, I, v);
-                      if (!(void 0 === o ? i === V || g(i, V, C, t, v) : o)) {
+                        var V = n ? C(o, i, P, I, A, v) : C(i, o, P, A, I, v);
+                      if (!(void 0 === V ? i === o || g(i, o, C, t, v) : V)) {
                         E = !1;
                         break;
                       }
@@ -876,11 +876,11 @@
           var g = void 0 !== A,
             C = null === A,
             t = A == A,
-            v = oI(A),
+            v = VI(A),
             n = void 0 !== I,
             e = null === I,
             f = I == I,
-            r = oI(I);
+            r = VI(I);
           if (
             (!e && !r && !v && A > I) ||
             (v && n && f && !e && !r) ||
@@ -913,9 +913,9 @@
         for (v.set(A, I), v.set(I, A); ++P < r; ) {
           var a = A[P],
             i = I[P];
-          if (C) var V = f ? C(i, a, P, I, A, v) : C(a, i, P, A, I, v);
-          if (void 0 !== V) {
-            if (V) continue;
+          if (C) var o = f ? C(i, a, P, I, A, v) : C(a, i, P, A, I, v);
+          if (void 0 !== o) {
+            if (o) continue;
             z = !1;
             break;
           }
@@ -987,7 +987,7 @@
             'symbol' != g &&
             'boolean' != g &&
             null != A &&
-            !oI(A)
+            !VI(A)
           ) ||
           (p.test(A) || !j.test(A) || (null != I && A in Object(I)))
         );
@@ -1001,9 +1001,9 @@
         };
       }
       ((aA && _A(new aA(new ArrayBuffer(1))) != R) ||
-        (iA && _A(new iA()) != V) ||
-        (VA && '[object Promise]' != _A(VA.resolve())) ||
-        (oA && _A(new oA()) != U) ||
+        (iA && _A(new iA()) != o) ||
+        (oA && '[object Promise]' != _A(oA.resolve())) ||
+        (VA && _A(new VA()) != U) ||
         (cA && '[object WeakMap]' != _A(new cA()))) &&
         (_A = function(A) {
           var I = nA.call(A),
@@ -1014,7 +1014,7 @@
               case UA:
                 return R;
               case dA:
-                return V;
+                return o;
               case bA:
                 return '[object Promise]';
               case TA:
@@ -1031,7 +1031,7 @@
             ? ''
             : (function(A) {
                 if ('string' == typeof A) return A;
-                if (oI(A)) return kA ? kA.call(A) : '';
+                if (VI(A)) return kA ? kA.call(A) : '';
                 var I = A + '';
                 return '0' == I && 1 / A == -f ? '-0' : I;
               })(I);
@@ -1045,7 +1045,7 @@
         );
       });
       function nI(A) {
-        if ('string' == typeof A || oI(A)) return A;
+        if ('string' == typeof A || VI(A)) return A;
         var I = A + '';
         return '0' == I && 1 / A == -f ? '-0' : I;
       }
@@ -1120,7 +1120,7 @@
       function lI(A) {
         return (
           (function(A) {
-            return VI(A) && zI(A);
+            return oI(A) && zI(A);
           })(A) &&
           vA.call(A, 'callee') &&
           (!uA.call(A, 'callee') || nA.call(A) == u)
@@ -1142,16 +1142,16 @@
         var I = typeof A;
         return !!A && ('object' == I || 'function' == I);
       }
-      function VI(A) {
+      function oI(A) {
         return !!A && 'object' == typeof A;
       }
-      function oI(A) {
-        return 'symbol' == typeof A || (VI(A) && nA.call(A) == b);
+      function VI(A) {
+        return 'symbol' == typeof A || (oI(A) && nA.call(A) == b);
       }
       var cI = w
         ? G(w)
         : function(A) {
-            return VI(A) && aI(A.length) && !!s[nA.call(A)];
+            return oI(A) && aI(A.length) && !!s[nA.call(A)];
           };
       function QI(A) {
         return zI(A) ? SA(A) : xA(A);
@@ -1246,8 +1246,8 @@
       E = g(10),
       a = g(11),
       i = g(12),
-      V = g(13),
-      o = g(14),
+      o = g(13),
+      V = g(14),
       c = g(15),
       Q = g(16),
       U = g(17),
@@ -1287,8 +1287,8 @@
       (G.giveUpButtonBlue = images.fromBase64(E)),
       (G.giveUpButtonWhite = images.fromBase64(a)),
       (G.levelSelectBeginner = images.fromBase64(i)),
-      (G.levelSelectExpert = images.fromBase64(V)),
-      (G.levelSelectMaster = images.fromBase64(o)),
+      (G.levelSelectExpert = images.fromBase64(o)),
+      (G.levelSelectMaster = images.fromBase64(V)),
       (G.levelSelectStandard = images.fromBase64(c)),
       (G.levelSelect = images.fromBase64(Q)),
       (G.loadingText = images.fromBase64(U)),
@@ -1745,7 +1745,7 @@
         });
       });
     }
-    function VA() {
+    function oA() {
       for (var A = [], I = 0; I < arguments.length; I++) A[I] = arguments[I];
       return fA(this, void 0, void 0, function() {
         var I, g, C, t;
@@ -1769,8 +1769,8 @@
         });
       });
     }
-    var oA = g(46),
-      cA = g.n(oA);
+    var VA = g(46),
+      cA = g.n(VA);
     var QA = function() {
         return (QA =
           Object.assign ||
@@ -2179,7 +2179,7 @@
             case 0:
               return [
                 4,
-                VA(
+                oA(
                   {
                     image: IA.supportSelectButton,
                     timeout: 3e4,
@@ -2771,10 +2771,10 @@
         return GA(this, function(A) {
           switch (A.label) {
             case 0:
-              return (
-                lA(IA.teamReadyButton), toastLog('----测试一下----'), [4, yA()]
-              );
+              return lA(IA.teamReadyButton), [4, KA()];
             case 1:
+              return A.sent(), [4, yA()];
+            case 2:
               return A.sent(), [2];
           }
         });
@@ -2808,7 +2808,35 @@
         });
       });
     }
-    var KA = function(A, I, g, C) {
+    function KA() {
+      return xA(this, void 0, void 0, function() {
+        return GA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 2, , 3]), [4, HA()];
+            case 1:
+              return A.sent(), [3, 3];
+            case 2:
+              return A.sent(), [3, 3];
+            case 3:
+              return [2];
+          }
+        });
+      });
+    }
+    function HA() {
+      return xA(this, void 0, void 0, function() {
+        return GA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return uA(IA.startBattleButton), [4, eA(3e3)];
+            case 1:
+              return A.sent(), lA(IA.stillStartButton), lA(IA.closeButton), [2];
+          }
+        });
+      });
+    }
+    var _A = function(A, I, g, C) {
         return new (g || (g = Promise))(function(t, v) {
           function n(A) {
             try {
@@ -2838,7 +2866,7 @@
           f((C = C.apply(A, I || [])).next());
         });
       },
-      HA = function(A, I) {
+      $A = function(A, I) {
         var g,
           C,
           t,
@@ -2926,9 +2954,9 @@
           };
         }
       };
-    function _A() {
-      return KA(this, void 0, void 0, function() {
-        return HA(this, function(A) {
+    function AI() {
+      return _A(this, void 0, void 0, function() {
+        return $A(this, function(A) {
           switch (A.label) {
             case 0:
               return [
@@ -2952,10 +2980,10 @@
         });
       });
     }
-    function $A() {
-      return KA(this, void 0, void 0, function() {
+    function II() {
+      return _A(this, void 0, void 0, function() {
         var A;
-        return HA(this, function(I) {
+        return $A(this, function(I) {
           switch (I.label) {
             case 0:
               return (
@@ -2975,12 +3003,12 @@
         });
       });
     }
-    function AI() {
-      return KA(this, void 0, void 0, function() {
-        return HA(this, function(A) {
+    function gI() {
+      return _A(this, void 0, void 0, function() {
+        return $A(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, $A()];
+              return A.trys.push([0, 2, , 3]), [4, II()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -2991,16 +3019,16 @@
         });
       });
     }
-    function II() {
-      return KA(this, void 0, void 0, function() {
+    function CI() {
+      return _A(this, void 0, void 0, function() {
         var A;
-        return HA(this, function(I) {
+        return $A(this, function(I) {
           switch (I.label) {
             case 0:
               return (A = gA(IA.supportSkillAvailable, {
                 region: [device.width / 3, device.height / 4]
               }))
-                ? [4, _A()]
+                ? [4, AI()]
                 : (console.verbose('支援技能不可用'), [2]);
             case 1:
               return (
@@ -3013,7 +3041,7 @@
         });
       });
     }
-    var gI = function(A, I, g, C) {
+    var tI = function(A, I, g, C) {
         return new (g || (g = Promise))(function(t, v) {
           function n(A) {
             try {
@@ -3043,7 +3071,7 @@
           f((C = C.apply(A, I || [])).next());
         });
       },
-      CI = function(A, I) {
+      vI = function(A, I) {
         var g,
           C,
           t,
@@ -3131,9 +3159,9 @@
           };
         }
       };
-    function tI() {
-      return gI(this, void 0, void 0, function() {
-        return CI(this, function(A) {
+    function nI() {
+      return tI(this, void 0, void 0, function() {
+        return vI(this, function(A) {
           switch (A.label) {
             case 0:
               return (
@@ -3153,13 +3181,13 @@
               throw (A.sent(), new Error('队伍战力不足, 无法通关'));
             case 2:
               return (
-                AI(),
+                gI(),
                 (function() {
-                  KA(this, void 0, void 0, function() {
-                    return HA(this, function(A) {
+                  _A(this, void 0, void 0, function() {
+                    return $A(this, function(A) {
                       switch (A.label) {
                         case 0:
-                          return A.trys.push([0, 2, , 3]), [4, II()];
+                          return A.trys.push([0, 2, , 3]), [4, CI()];
                         case 1:
                           return A.sent(), [3, 3];
                         case 2:
@@ -3170,7 +3198,7 @@
                     });
                   });
                 })(),
-                [4, vI()]
+                [4, eI()]
               );
             case 3:
               return A.sent(), [2];
@@ -3178,12 +3206,12 @@
         });
       });
     }
-    function vI() {
-      return gI(this, void 0, void 0, function() {
-        return CI(this, function(A) {
+    function eI() {
+      return tI(this, void 0, void 0, function() {
+        return vI(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, nI()];
+              return A.trys.push([0, 2, , 3]), [4, fI()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -3194,9 +3222,9 @@
         });
       });
     }
-    function nI() {
-      return gI(this, void 0, void 0, function() {
-        return CI(this, function(A) {
+    function fI() {
+      return tI(this, void 0, void 0, function() {
+        return vI(this, function(A) {
           switch (A.label) {
             case 0:
               return (
@@ -3210,7 +3238,7 @@
         });
       });
     }
-    var eI = function(A, I, g, C) {
+    var rI = function(A, I, g, C) {
         return new (g || (g = Promise))(function(t, v) {
           function n(A) {
             try {
@@ -3240,7 +3268,7 @@
           f((C = C.apply(A, I || [])).next());
         });
       },
-      fI = function(A, I) {
+      uI = function(A, I) {
         var g,
           C,
           t,
@@ -3328,9 +3356,9 @@
           };
         }
       };
-    function rI() {
-      return eI(this, void 0, void 0, function() {
-        return fI(this, function(A) {
+    function lI() {
+      return rI(this, void 0, void 0, function() {
+        return uI(this, function(A) {
           switch (A.label) {
             case 0:
               return (
@@ -3344,8 +3372,8 @@
                 lA(IA.autoBattleSwitchOff),
                 lA(IA.retryButtonRed),
                 lA(IA.okButton),
-                AI(),
-                [4, uI()]
+                gI(),
+                [4, PI()]
               );
             case 2:
               return A.sent(), [2];
@@ -3353,12 +3381,12 @@
         });
       });
     }
-    function uI() {
-      return eI(this, void 0, void 0, function() {
-        return fI(this, function(A) {
+    function PI() {
+      return rI(this, void 0, void 0, function() {
+        return uI(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, lI()];
+              return A.trys.push([0, 2, , 3]), [4, zI()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -3369,9 +3397,9 @@
         });
       });
     }
-    function lI() {
-      return eI(this, void 0, void 0, function() {
-        return fI(this, function(A) {
+    function zI() {
+      return rI(this, void 0, void 0, function() {
+        return uI(this, function(A) {
           switch (A.label) {
             case 0:
               return uA(IA.continueButtonBlue), [4, PA(IA.nextBattleBlue)];
@@ -3381,7 +3409,7 @@
         });
       });
     }
-    var PI = function(A, I, g, C) {
+    var EI = function(A, I, g, C) {
         return new (g || (g = Promise))(function(t, v) {
           function n(A) {
             try {
@@ -3411,7 +3439,7 @@
           f((C = C.apply(A, I || [])).next());
         });
       },
-      zI = function(A, I) {
+      aI = function(A, I) {
         var g,
           C,
           t,
@@ -3499,24 +3527,24 @@
           };
         }
       };
-    function EI() {
-      return PI(this, void 0, void 0, function() {
-        return zI(this, function(A) {
+    function iI() {
+      return EI(this, void 0, void 0, function() {
+        return aI(this, function(A) {
           switch (A.label) {
             case 0:
-              return lA(IA.teamReadyButton), [4, aI()];
+              return lA(IA.teamReadyButton), [4, oI()];
             case 1:
               return A.sent(), [2];
           }
         });
       });
     }
-    function aI() {
-      return PI(this, void 0, void 0, function() {
-        return zI(this, function(A) {
+    function oI() {
+      return EI(this, void 0, void 0, function() {
+        return aI(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, iI()];
+              return A.trys.push([0, 2, , 3]), [4, VI()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -3527,9 +3555,9 @@
         });
       });
     }
-    function iI() {
-      return PI(this, void 0, void 0, function() {
-        return zI(this, function(A) {
+    function VI() {
+      return EI(this, void 0, void 0, function() {
+        return aI(this, function(A) {
           switch (A.label) {
             case 0:
               return uA(IA.continueButtonBlue), [4, PA(IA.nextBattleBlue)];
@@ -3539,9 +3567,9 @@
         });
       });
     }
-    var VI = {};
-    var oI = g(0),
-      cI = function(A, I, g, C) {
+    var cI = {};
+    var QI = g(0),
+      UI = function(A, I, g, C) {
         return new (g || (g = Promise))(function(t, v) {
           function n(A) {
             try {
@@ -3571,7 +3599,7 @@
           f((C = C.apply(A, I || [])).next());
         });
       },
-      QI = function(A, I) {
+      dI = function(A, I) {
         var g,
           C,
           t,
@@ -3659,19 +3687,19 @@
           };
         }
       };
-    function UI() {
-      return cI(this, void 0, void 0, function() {
+    function bI() {
+      return UI(this, void 0, void 0, function() {
         var A, I;
-        return QI(this, function(g) {
+        return dI(this, function(g) {
           switch (g.label) {
             case 0:
               return C.currentTask ? [3, 3] : [4, eA(1e3)];
             case 1:
-              return g.sent(), [4, UI()];
+              return g.sent(), [4, bI()];
             case 2:
               return g.sent(), [2];
             case 3:
-              if (!(A = VI[C.currentTask]))
+              if (!(A = cI[C.currentTask]))
                 throw new Error('Unknown task: ' + C.currentTask);
               console.log('运行任务: ' + C.currentTask), (g.label = 4);
             case 4:
@@ -3682,7 +3710,7 @@
               return (
                 (I = g.sent()),
                 console.show(),
-                console.error(oI.b + ': ' + I),
+                console.error(QI.b + ': ' + I),
                 device.vibrate(500),
                 (C.currentTask = void 0),
                 [3, 7]
@@ -3690,16 +3718,16 @@
             case 7:
               return [4, eA(1e3)];
             case 8:
-              return g.sent(), [4, UI()];
+              return g.sent(), [4, bI()];
             case 9:
               return g.sent(), [2];
           }
         });
       });
     }
-    var dI =
-        '<frame gravity="center">\n    <spinner id="taskSpinner" entries="${entries}" spinnerMode="dialog" bg="#77ffffff" />\n</frame>',
-      bI = function() {
+    var TI =
+        '<frame gravity="center">\r\n    <spinner id="taskSpinner" entries="${entries}" spinnerMode="dialog" bg="#77ffffff" />\r\n</frame>',
+      RI = function() {
         for (var A = 0, I = 0, g = arguments.length; I < g; I++)
           A += arguments[I].length;
         var C = Array(A),
@@ -3709,10 +3737,10 @@
             C[t] = v[n];
         return C;
       },
-      TI = '停止';
-    function RI() {
-      var A = bI([TI], Object.keys(VI)),
-        I = dI.replace(/\${entries}/g, A.join('|')),
+      jI = '停止';
+    function pI() {
+      var A = RI([jI], Object.keys(cI)),
+        I = TI.replace(/\${entries}/g, A.join('|')),
         g = floaty.window(I);
       return (
         g.setAdjustEnabled(!0),
@@ -3721,7 +3749,7 @@
           A.taskSpinner.setOnItemSelectedListener({
             onItemSelected: function() {
               var I = A.taskSpinner.getSelectedItem();
-              C.currentTask = I === TI ? void 0 : I;
+              C.currentTask = I === jI ? void 0 : I;
             },
             onNothingSelected: function() {
               throw new Error('This should never happen');
@@ -3729,7 +3757,7 @@
           }),
             C.taskChangeListeners.push(function(g) {
               ui.run(function() {
-                A.taskSpinner.setSelection(I.indexOf(g || TI));
+                A.taskSpinner.setSelection(I.indexOf(g || jI));
               });
             });
         })(g, A),
@@ -3737,7 +3765,7 @@
         { window: g, spinnerItems: A }
       );
     }
-    var jI = function(A, I) {
+    var kI = function(A, I) {
       var g,
         C,
         t,
@@ -3856,23 +3884,23 @@
       });
     })(void 0, void 0, void 0, function() {
       var A;
-      return jI(this, function(I) {
+      return kI(this, function(I) {
         switch (I.label) {
           case 0:
-            console.log(oI.a + ': ' + oI.b), (I.label = 1);
+            console.log(QI.a + ': ' + QI.b), (I.label = 1);
           case 1:
             return (
               I.trys.push([1, 3, , 4]),
               launch('com.nintendo.zaga'),
               device.keepScreenOn(1e4),
-              (VI.重复战斗 = tI),
-              (VI.组队重复战斗 = rI),
-              (VI.简单组队队员 = EI),
-              (VI.无限池 = FA),
-              (VI.自动喂龙 = XA),
-              (VI.喂四叶草 = qA),
-              (VI.刷稀有 = ZA),
-              RI(),
+              (cI.重复战斗 = nI),
+              (cI.组队重复战斗 = lI),
+              (cI.简单组队队员 = iI),
+              (cI.无限池 = FA),
+              (cI.自动喂龙 = XA),
+              (cI.喂四叶草 = qA),
+              (cI.刷稀有 = ZA),
+              pI(),
               (g = (function(A, I) {
                 void 0 === A && (A = device.width),
                   void 0 === I && (I = device.height);
@@ -3901,7 +3929,7 @@
               })()),
               toastLog('Load assets: ' + g),
               Object.assign(IA, AA[g]),
-              [4, UI()]
+              [4, bI()]
             );
           case 2:
             return I.sent(), [3, 4];
