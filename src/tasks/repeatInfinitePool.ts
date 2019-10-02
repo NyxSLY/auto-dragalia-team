@@ -4,7 +4,6 @@ import { clickImage, tryClickImage, waitAndClickImage } from '@/utils/image';
 import { wait } from '@/utils/wait';
 
 export async function repeatInfinitePool(): Promise<void> {
-  tryClickImage(img.teamReadyButton);
   // 队长部分
   await tryToBeCaptain();
   await tryRepeatWithStaminaTeamMember();
@@ -15,6 +14,7 @@ async function tryRepeatWithStaminaTeamMember(): Promise<void> {
     await repeatWithStamina();
   } catch {
     tryClickImage(img.continueButtonRed);
+    device.vibrate(1000);
   }
 }
 
@@ -26,7 +26,9 @@ async function repeatWithStamina(): Promise<void> {
 async function tryToBeCaptain(): Promise<void> {
   try {
     await captainReady();
-  } catch {}
+  } catch {
+    tryClickImage(img.teamReadyButton);
+  }
 }
 
 async function captainReady(): Promise<void> {

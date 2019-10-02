@@ -11,7 +11,7 @@ import { name, version } from 'package.json';
   try {
     launch('com.nintendo.zaga');
 
-    device.keepScreenOn(10000);
+    device.keepScreenDim();
 
     setupTaskRegistry();
     setupUI();
