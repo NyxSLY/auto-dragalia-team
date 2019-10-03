@@ -17,7 +17,7 @@ async function tryRepeatWithStaminaTeamMember(): Promise<void> {
 
 async function repeatWithStamina(): Promise<void> {
   const pos: Point = clickImage(img.continueButtonRed);
-  await waitAndClickImage(img.nextBattleBlue);
+  await waitAndClickImage(img.nextBattleBlue, { timeout: 3e3 });
 }
 
 async function tryToBeCaptain(): Promise<void> {

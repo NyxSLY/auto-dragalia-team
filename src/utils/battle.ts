@@ -17,9 +17,11 @@ export async function transform2dragon(): Promise<void> {
   // await waitForEnemy();
   console.log('龙化');
   click(pos.x + 100, pos.y);
-  await wait(2500);
+  await wait(1500);
   // await waitForEnemy();
   console.log('使用龙技能');
+  click(pos.x + 360, pos.y + 300);
+  await wait(1000); // 确保使用龙技能
   click(pos.x + 360, pos.y + 300);
 }
 
@@ -72,7 +74,7 @@ export async function swipeUp(): Promise<void> {
 
 export async function tapTap(): Promise<void> {
   const x1: number = device.width / 2;
-  const y1: number = device.height - device.height / 3;
+  const y1: number = device.height / 2;
   try {
     press(x1, y1, 20);
     await wait(100);

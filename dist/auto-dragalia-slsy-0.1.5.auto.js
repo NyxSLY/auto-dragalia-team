@@ -2613,15 +2613,17 @@
                 (A = nA(eA.transformGaugeFull)),
                 console.log('龙化'),
                 click(A.x + 100, A.y),
-                [4, vA(2500)]
+                [4, vA(1500)]
               );
             case 1:
               return (
                 g.sent(),
                 console.log('使用龙技能'),
                 click(A.x + 360, A.y + 300),
-                [2]
+                [4, vA(1e3)]
               );
+            case 2:
+              return g.sent(), click(A.x + 360, A.y + 300), [2];
           }
         });
       });
