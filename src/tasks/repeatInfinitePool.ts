@@ -31,6 +31,8 @@ async function tryToBeCaptain(): Promise<void> {
 async function captainReady(): Promise<void> {
   const pos: Point = clickImage(img.startBattleButton);
   await wait(3000);
+  tryClickImage(img.cancelButton);
   tryClickImage(img.stillStartButtonRed); // 这里是红色按钮
   tryClickImage(img.closeButton);
+  tryClickImage(img.cancelButton);
 }
