@@ -52,3 +52,39 @@ export async function tryCastSupportSkill(): Promise<void> {
     return;
   }
 }
+
+export async function trySwipeUp(): Promise<void> {
+  try {
+    await swipeUp();
+  } catch {
+    return;
+  }
+}
+
+export async function swipeUp(): Promise<void> {
+  const x1: number = device.width / 2;
+  const y1: number = device.height / 2;
+  const x2: number = x1;
+  const y2: number = y1 - y1 / 2;
+  swipe(x1, y1, x2, y2, 100);
+  toastLog(`上滑一次`);
+}
+
+export async function tapTap(): Promise<void> {
+  const x1: number = device.width / 2;
+  const y1: number = device.height - device.height / 3;
+  try {
+    press(x1, y1, 20);
+    await wait(100);
+    press(x1, y1, 20);
+    await wait(100);
+    press(x1, y1, 20);
+    await wait(100);
+    press(x1, y1, 20);
+    await wait(100);
+    press(x1, y1, 20);
+    await wait(100);
+  } catch {
+    return;
+  }
+}

@@ -36,6 +36,7 @@ export type ImageAssets = Readonly<
     | 'retryButtonRed'
     | 'startBattleButton'
     | 'stillStartButton'
+    | 'stillStartButtonRed'
     | 'supportSelectButton'
     | 'supportSkillAvailable'
     | 'tapButton'

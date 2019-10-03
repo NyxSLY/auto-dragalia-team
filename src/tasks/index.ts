@@ -5,6 +5,7 @@ import { repeatInfinitePool } from '@/tasks/repeatInfinitePool';
 import { repeatRaid } from '@/tasks/repeatRaid';
 import { repeatRaidTeamm } from '@/tasks/repeatRaidTeamm';
 import { repeatRaidTeamSimple } from '@/tasks/repeatRaidTeamSimple';
+import { autoCombat } from '@/tasks/autoCombat';
 
 export const taskRegistry: Record<
   string,
@@ -16,7 +17,6 @@ export function setupTaskRegistry(): void {
   taskRegistry.组队重复战斗 = repeatRaidTeamm;
   taskRegistry.简单组队队员 = repeatRaidTeamSimple;
   taskRegistry.无限池 = repeatInfinitePool;
-  taskRegistry.自动喂龙 = feedDragon;
-  taskRegistry.喂四叶草 = feedFourLeafClover;
+  taskRegistry.无限池自动战斗 = autoCombat;
   taskRegistry.刷稀有 = farmRareItem;
 }

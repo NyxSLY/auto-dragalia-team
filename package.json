@@ -1,6 +1,6 @@
 {
   "name": "auto-dragalia-slsy",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "private": true,
   "main": "src/main.ts",
   "repository": "https://github.com/NyxSLY/auto-dragalia.git",

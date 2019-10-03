@@ -33,6 +33,7 @@ import * as repeatWithStaminaButtonPng from '@/assets/images/1080x2160/repeat-wi
 import * as retryButtonBluePng from '@/assets/images/1080x2160/retry-button-blue.png';
 import * as retryButtonRedPng from '@/assets/images/1080x2160/retry-button-red.png';
 import * as startBattleButtonPng from '@/assets/images/1080x2160/start-battle-button.png';
+import * as stillStartButtonRedPng from '@/assets/images/1080x2160/still-start-button-red.png';
 import * as stillStartButtonPng from '@/assets/images/1080x2160/still-start-button.png';
 import * as supportSelectButtonPng from '@/assets/images/1080x2160/support-select-button.png';
 import * as supportSkillAvailablePng from '@/assets/images/1080x2160/support-skill-available.png';
@@ -76,6 +77,7 @@ index.repeatWithStaminaButton = images.fromBase64(repeatWithStaminaButtonPng);
 index.retryButtonBlue = images.fromBase64(retryButtonBluePng);
 index.retryButtonRed = images.fromBase64(retryButtonRedPng);
 index.startBattleButton = images.fromBase64(startBattleButtonPng);
+index.stillStartButtonRed = images.fromBase64(stillStartButtonRedPng);
 index.stillStartButton = images.fromBase64(stillStartButtonPng);
 index.supportSelectButton = images.fromBase64(supportSelectButtonPng);
 index.supportSkillAvailable = images.fromBase64(supportSkillAvailablePng);

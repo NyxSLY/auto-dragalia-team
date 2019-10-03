@@ -1,10 +1,8 @@
 import { img } from '@/assets/images';
-import { tryTransform2dragon } from '@/utils/battle';
 import { clickImage, tryClickImage, waitAndClickImage } from '@/utils/image';
 import { wait } from '@/utils/wait';
 
 export async function repeatInfinitePool(): Promise<void> {
-  // 队长部分
   await tryToBeCaptain();
   await tryRepeatWithStaminaTeamMember();
 }
@@ -14,7 +12,6 @@ async function tryRepeatWithStaminaTeamMember(): Promise<void> {
     await repeatWithStamina();
   } catch {
     tryClickImage(img.continueButtonRed);
-    device.vibrate(1000);
   }
 }
 
@@ -34,6 +31,6 @@ async function tryToBeCaptain(): Promise<void> {
 async function captainReady(): Promise<void> {
   const pos: Point = clickImage(img.startBattleButton);
   await wait(3000);
-  tryClickImage(img.stillStartButton);
+  tryClickImage(img.stillStartButtonRed); // 这里是红色按钮
   tryClickImage(img.closeButton);
 }
