@@ -20,9 +20,15 @@ export async function transform2dragon(): Promise<void> {
   await wait(1500);
   // await waitForEnemy();
   console.log('使用龙技能');
-  click(pos.x + 360, pos.y + 300);
+  click(
+    pos.x + (360 / 1080) * device.width,
+    pos.y + (300 / 2160) * device.height
+  );
   await wait(1000); // 确保使用龙技能
-  click(pos.x + 360, pos.y + 300);
+  click(
+    pos.x + (360 / 1080) * device.width,
+    pos.y + (300 / 2160) * device.height
+  );
 }
 
 export async function tryTransform2dragon(): Promise<void> {
@@ -76,16 +82,17 @@ export async function tapTap(): Promise<void> {
   const x1: number = device.width / 2;
   const y1: number = device.height / 2;
   try {
+    await wait(500);
     press(x1, y1, 20);
-    await wait(100);
+    await wait(500);
     press(x1, y1, 20);
-    await wait(100);
+    await wait(500);
     press(x1, y1, 20);
-    await wait(100);
+    await wait(500);
     press(x1, y1, 20);
-    await wait(100);
+    await wait(500);
     press(x1, y1, 20);
-    await wait(100);
+    await wait(500);
   } catch {
     return;
   }

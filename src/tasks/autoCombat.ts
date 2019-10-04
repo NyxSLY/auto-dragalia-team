@@ -9,7 +9,12 @@ import {
   findImage
 } from '@/utils/image';
 import { wait } from '@/utils/wait';
-import { trySwipeUp, tapTap, tryTransform2dragon } from '@/utils/battle';
+import {
+  trySwipeUp,
+  tapTap,
+  tryTransform2dragon,
+  swipeUp
+} from '@/utils/battle';
 
 export async function autoCombat(): Promise<void> {
   // 是否在房间
@@ -26,24 +31,23 @@ async function battleGroundAutoCombat(): Promise<void> {
 }
 
 async function ifInBattleGround(): Promise<void> {
-  // 上滚4次之后开始点击
+  // 上滚3次之后开始点击
   const pos: Point = findImage(img.menuButton);
   toastLog(`进入战斗`);
   await wait(1000);
   await trySwipeUp();
-  await wait(400);
+  await wait(500);
   await trySwipeUp();
-  await wait(400);
-  await trySwipeUp();
-  await wait(400);
-  await trySwipeUp();
-  await wait(400);
+  await wait(500);
+  //await trySwipeUp();
+  //await wait(500);
   await tap2end();
 }
 
 export async function tap2end(): Promise<void> {
   try {
     // 查看战斗是否结束
+    await tapTap();
     await tapTap();
     tryTransform2dragon();
     await repeatWithStamina();
@@ -55,14 +59,33 @@ export async function tap2end(): Promise<void> {
 
 async function repeatWithStamina(): Promise<void> {
   const pos: Point = clickImage(img.continueButtonRed);
-  toastLog(`等待蓝色续战，5s`);
-  await waitAndClickImage(img.nextBattleBlue, { timeout: 3e3 });
-  await findAnotherRoom();
-  // await waitAndClickImage(img.continueButtonRed, { timeout: 3e3 });
+  toastLog(`退房~退房~`);
+  await wait(2000);
+  await waitAndClickImage(img.noContinueButton, { timeout: 5e3 });
+  await tryClickImage(img.continueButtonRed);
+  await tryClickEx();
 }
 
-async function findAnotherRoom(): Promise<void> {
-  await waitAndClickImage(img.continueButtonRed, { timeout: 3e3 });
+async function tryClickEx(): Promise<void> {
+  try {
+    await wait(1000);
+    toastLog(`找房间`);
+    await clickEx();
+  } catch {
+    swipeUp();
+    await wait(1000);
+    await tryClickEx();
+  }
+}
+
+async function clickEx(): Promise<void> {
+  await wait(1000);
+  const pos: Point = clickImage(img.ex);
+  toastLog(`选房间`);
+  await waitAndClickImage(img.exWhite, { timeout: 5e3 });
+  await waitAndClickImage(img.findTeam, { timeout: 5e3 });
+
+  // 找房间
 }
 
 async function tryToBeCaptain(): Promise<void> {
