@@ -61,7 +61,7 @@ async function repeatWithStamina(): Promise<void> {
   const pos: Point = clickImage(img.continueButtonRed);
   toastLog(`退房~退房~`);
   await wait(2000);
-  await waitAndClickImage(img.noContinueButton, { timeout: 5e3 });
+  await tryClickImage(img.noContinueButton);
   await tryClickImage(img.continueButtonRed);
   await tryClickEx();
 }

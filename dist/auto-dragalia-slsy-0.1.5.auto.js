@@ -3694,7 +3694,7 @@
                 bA(lA.continueButtonRed), toastLog('退房~退房~'), [4, dA(2e3)]
               );
             case 1:
-              return A.sent(), [4, zA(lA.noContinueButton, { timeout: 5e3 })];
+              return A.sent(), [4, EA(lA.noContinueButton)];
             case 2:
               return A.sent(), [4, EA(lA.continueButtonRed)];
             case 3:
