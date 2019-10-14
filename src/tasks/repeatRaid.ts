@@ -31,6 +31,6 @@ async function tryRepeatWithStamina(): Promise<void> {
 }
 async function repeatWithStamina(): Promise<void> {
   clickImage(img.repeatBattleButton);
-  await waitAndClickImage(img.repeatWithStaminaButton);
-  await waitAndClickImage(img.okButton);
+  await waitAndClickImage(img.repeatWithStaminaButton, { timeout: 5e3 });
+  await waitAndClickImage(img.okButton, { timeout: 5e3 });
 }
