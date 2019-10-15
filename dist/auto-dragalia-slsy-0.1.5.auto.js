@@ -2148,513 +2148,6 @@
         return OA(this, function(A) {
           switch (A.label) {
             case 0:
-              return (
-                (function() {
-                  var A = vA(
-                    [
-                      lA.levelSelectMaster,
-                      lA.levelSelectExpert,
-                      lA.levelSelectStandard,
-                      lA.levelSelectBeginner
-                    ],
-                    { id: 'level-select' }
-                  );
-                  if (!A) throw new Error('请至关卡选择页面再开始');
-                  click(A.x, A.y);
-                })(),
-                [4, NA()]
-              );
-            case 1:
-              return (
-                A.sent(),
-                log('检测到正在进入第一关卡'),
-                [4, PA({ id: 'stage-1-loading' })]
-              );
-            case 2:
-              return A.sent(), toastLog('检测到已进入第一关卡'), [4, qA()];
-            case 3:
-              return A.sent(), toastLog('检测到正在进入第二关卡'), [4, hA()];
-            case 4:
-              return A.sent(), [4, xA()];
-            case 5:
-              return (
-                A.sent(),
-                [
-                  4,
-                  jA(!0, lA.levelSelect, {
-                    timeout: 6e4,
-                    id: 'level-select',
-                    onDelay: ZA
-                  })
-                ]
-              );
-            case 6:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function NA() {
-      return JA(this, void 0, void 0, function() {
-        return OA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return [
-                4,
-                SA(
-                  {
-                    image: lA.supportSelectButton,
-                    timeout: 3e4,
-                    id: 'support-select',
-                    onDelay: ZA
-                  },
-                  {
-                    image: lA.startBattleButton,
-                    id: 'start-battle',
-                    timeout: 3e4,
-                    onDelay: ZA
-                  },
-                  {
-                    image: lA.loadingText,
-                    id: 'stage-1-loading',
-                    timeout: 3e4,
-                    onDelay: ZA
-                  }
-                )
-              ];
-            case 1:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function qA() {
-      return JA(this, void 0, void 0, function() {
-        return OA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return (
-                pA(lA.autoBattleSwitchOff, { id: 'auto-battle-switch-off' }),
-                [4, jA(!0, lA.loadingText, { id: 'stage-2-loading' })]
-              );
-            case 1:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function hA() {
-      return JA(this, void 0, void 0, function() {
-        return OA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return [
-                4,
-                kA(!0, [lA.rareItem], {
-                  timeout: 6e4,
-                  onDelay: function() {
-                    ZA(), pA(lA.menuButton, { id: 'menu-button' });
-                  },
-                  id: 'rare-item'
-                })
-              ];
-            case 1:
-              return A.sent(), [4, dA(500)];
-            case 2:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function xA() {
-      return JA(this, void 0, void 0, function() {
-        var A, g;
-        return OA(this, function(I) {
-          switch (I.label) {
-            case 0:
-              return (
-                (A = oA(lA.rareItem, { id: 'rare-item' })),
-                (g = [
-                  A.x,
-                  A.y + lA.rareItem.getHeight(),
-                  lA.rareItem.getWidth(),
-                  lA.rareItem.getHeight()
-                ]),
-                cA(lA.x0, { id: 'x0', region: g }) ? [4, GA()] : [3, 2]
-              );
-            case 1:
-              return I.sent(), [3, 3];
-            case 2:
-              !(function() {
-                toastLog('成功刷到稀有物品, 继续完成战斗');
-                for (
-                  ;
-                  !pA(lA.continueButtonBlue, {
-                    id: 'finish-phrase-continue-button'
-                  });
-
-                )
-                  pA(lA.okButton, { id: 'finish-phrase-ok-button' }),
-                    pA(lA.closeButton, { id: 'finish-phrase-close-button' }),
-                    pA(lA.cancelButton, { id: 'finish-phrase-cancel-button' }),
-                    pA(lA.tapButton, { id: 'finish-phrase-tap-button' }),
-                    pA(lA.nextText, { id: 'finish-phrase-next-text' });
-              })(),
-                (I.label = 3);
-            case 3:
-              return [2];
-          }
-        });
-      });
-    }
-    function GA() {
-      return JA(this, void 0, void 0, function() {
-        return OA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return (
-                log('没有刷到稀有物品, 直接下一轮'),
-                zA(lA.giveUpButtonBlue, { id: 'give-up-button-1' }),
-                [4, dA(500)]
-              );
-            case 1:
-              return (
-                A.sent(),
-                [
-                  4,
-                  mA(lA.giveUpButtonBlue, {
-                    timeout: 5e3,
-                    id: 'give-up-button-2'
-                  })
-                ]
-              );
-            case 2:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    var FA = function(A, g, I, C) {
-        return new (I || (I = Promise))(function(t, e) {
-          function n(A) {
-            try {
-              u(C.next(A));
-            } catch (A) {
-              e(A);
-            }
-          }
-          function r(A) {
-            try {
-              u(C.throw(A));
-            } catch (A) {
-              e(A);
-            }
-          }
-          function u(A) {
-            var g;
-            A.done
-              ? t(A.value)
-              : ((g = A.value),
-                g instanceof I
-                  ? g
-                  : new I(function(A) {
-                      A(g);
-                    })).then(n, r);
-          }
-          u((C = C.apply(A, g || [])).next());
-        });
-      },
-      LA = function(A, g) {
-        var I,
-          C,
-          t,
-          e,
-          n = {
-            label: 0,
-            sent: function() {
-              if (1 & t[0]) throw t[1];
-              return t[1];
-            },
-            trys: [],
-            ops: []
-          };
-        return (
-          (e = { next: r(0), throw: r(1), return: r(2) }),
-          'function' == typeof Symbol &&
-            (e[Symbol.iterator] = function() {
-              return this;
-            }),
-          e
-        );
-        function r(e) {
-          return function(r) {
-            return (function(e) {
-              if (I) throw new TypeError('Generator is already executing.');
-              for (; n; )
-                try {
-                  if (
-                    ((I = 1),
-                    C &&
-                      (t =
-                        2 & e[0]
-                          ? C.return
-                          : e[0]
-                          ? C.throw || ((t = C.return) && t.call(C), 0)
-                          : C.next) &&
-                      !(t = t.call(C, e[1])).done)
-                  )
-                    return t;
-                  switch (((C = 0), t && (e = [2 & e[0], t.value]), e[0])) {
-                    case 0:
-                    case 1:
-                      t = e;
-                      break;
-                    case 4:
-                      return n.label++, { value: e[1], done: !1 };
-                    case 5:
-                      n.label++, (C = e[1]), (e = [0]);
-                      continue;
-                    case 7:
-                      (e = n.ops.pop()), n.trys.pop();
-                      continue;
-                    default:
-                      if (
-                        !(t = (t = n.trys).length > 0 && t[t.length - 1]) &&
-                        (6 === e[0] || 2 === e[0])
-                      ) {
-                        n = 0;
-                        continue;
-                      }
-                      if (3 === e[0] && (!t || (e[1] > t[0] && e[1] < t[3]))) {
-                        n.label = e[1];
-                        break;
-                      }
-                      if (6 === e[0] && n.label < t[1]) {
-                        (n.label = t[1]), (t = e);
-                        break;
-                      }
-                      if (t && n.label < t[2]) {
-                        (n.label = t[2]), n.ops.push(e);
-                        break;
-                      }
-                      t[2] && n.ops.pop(), n.trys.pop();
-                      continue;
-                  }
-                  e = g.call(A, n);
-                } catch (A) {
-                  (e = [6, A]), (C = 0);
-                } finally {
-                  I = t = 0;
-                }
-              if (5 & e[0]) throw e[1];
-              return { value: e[0] ? e[1] : void 0, done: !0 };
-            })([e, r]);
-          };
-        }
-      };
-    function DA() {
-      return FA(this, void 0, void 0, function() {
-        return LA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return [4, KA()];
-            case 1:
-              return A.sent(), [4, yA()];
-            case 2:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function yA() {
-      return FA(this, void 0, void 0, function() {
-        return LA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return A.trys.push([0, 2, , 3]), [4, YA()];
-            case 1:
-              return A.sent(), [3, 3];
-            case 2:
-              return A.sent(), pA(lA.continueButtonRed), [3, 3];
-            case 3:
-              return [2];
-          }
-        });
-      });
-    }
-    function YA() {
-      return FA(this, void 0, void 0, function() {
-        return LA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return (
-                zA(lA.continueButtonRed),
-                [4, mA(lA.nextBattleBlue, { timeout: 5e3 })]
-              );
-            case 1:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function KA() {
-      return FA(this, void 0, void 0, function() {
-        return LA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return A.trys.push([0, 2, , 3]), [4, HA()];
-            case 1:
-              return A.sent(), [3, 3];
-            case 2:
-              return A.sent(), pA(lA.teamReadyButton), [3, 3];
-            case 3:
-              return [2];
-          }
-        });
-      });
-    }
-    function HA() {
-      return FA(this, void 0, void 0, function() {
-        return LA(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return zA(lA.startBattleButton), [4, dA(3e3)];
-            case 1:
-              return (
-                A.sent(),
-                pA(lA.cancelButton),
-                pA(lA.stillStartButtonRed),
-                pA(lA.closeButton),
-                pA(lA.cancelButton),
-                [2]
-              );
-          }
-        });
-      });
-    }
-    var _A = function(A, g, I, C) {
-        return new (I || (I = Promise))(function(t, e) {
-          function n(A) {
-            try {
-              u(C.next(A));
-            } catch (A) {
-              e(A);
-            }
-          }
-          function r(A) {
-            try {
-              u(C.throw(A));
-            } catch (A) {
-              e(A);
-            }
-          }
-          function u(A) {
-            var g;
-            A.done
-              ? t(A.value)
-              : ((g = A.value),
-                g instanceof I
-                  ? g
-                  : new I(function(A) {
-                      A(g);
-                    })).then(n, r);
-          }
-          u((C = C.apply(A, g || [])).next());
-        });
-      },
-      $A = function(A, g) {
-        var I,
-          C,
-          t,
-          e,
-          n = {
-            label: 0,
-            sent: function() {
-              if (1 & t[0]) throw t[1];
-              return t[1];
-            },
-            trys: [],
-            ops: []
-          };
-        return (
-          (e = { next: r(0), throw: r(1), return: r(2) }),
-          'function' == typeof Symbol &&
-            (e[Symbol.iterator] = function() {
-              return this;
-            }),
-          e
-        );
-        function r(e) {
-          return function(r) {
-            return (function(e) {
-              if (I) throw new TypeError('Generator is already executing.');
-              for (; n; )
-                try {
-                  if (
-                    ((I = 1),
-                    C &&
-                      (t =
-                        2 & e[0]
-                          ? C.return
-                          : e[0]
-                          ? C.throw || ((t = C.return) && t.call(C), 0)
-                          : C.next) &&
-                      !(t = t.call(C, e[1])).done)
-                  )
-                    return t;
-                  switch (((C = 0), t && (e = [2 & e[0], t.value]), e[0])) {
-                    case 0:
-                    case 1:
-                      t = e;
-                      break;
-                    case 4:
-                      return n.label++, { value: e[1], done: !1 };
-                    case 5:
-                      n.label++, (C = e[1]), (e = [0]);
-                      continue;
-                    case 7:
-                      (e = n.ops.pop()), n.trys.pop();
-                      continue;
-                    default:
-                      if (
-                        !(t = (t = n.trys).length > 0 && t[t.length - 1]) &&
-                        (6 === e[0] || 2 === e[0])
-                      ) {
-                        n = 0;
-                        continue;
-                      }
-                      if (3 === e[0] && (!t || (e[1] > t[0] && e[1] < t[3]))) {
-                        n.label = e[1];
-                        break;
-                      }
-                      if (6 === e[0] && n.label < t[1]) {
-                        (n.label = t[1]), (t = e);
-                        break;
-                      }
-                      if (t && n.label < t[2]) {
-                        (n.label = t[2]), n.ops.push(e);
-                        break;
-                      }
-                      t[2] && n.ops.pop(), n.trys.pop();
-                      continue;
-                  }
-                  e = g.call(A, n);
-                } catch (A) {
-                  (e = [6, A]), (C = 0);
-                } finally {
-                  I = t = 0;
-                }
-              if (5 & e[0]) throw e[1];
-              return { value: e[0] ? e[1] : void 0, done: !0 };
-            })([e, r]);
-          };
-        }
-      };
-    function Ag() {
-      return _A(this, void 0, void 0, function() {
-        return $A(this, function(A) {
-          switch (A.label) {
-            case 0:
               return [
                 4,
                 jA(!0, lA.enemyLegend, {
@@ -2676,10 +2169,10 @@
         });
       });
     }
-    function gg() {
-      return _A(this, void 0, void 0, function() {
+    function NA() {
+      return JA(this, void 0, void 0, function() {
         var A;
-        return $A(this, function(g) {
+        return OA(this, function(g) {
           switch (g.label) {
             case 0:
               return (
@@ -2711,12 +2204,12 @@
         });
       });
     }
-    function Ig() {
-      return _A(this, void 0, void 0, function() {
-        return $A(this, function(A) {
+    function qA() {
+      return JA(this, void 0, void 0, function() {
+        return OA(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, gg()];
+              return A.trys.push([0, 2, , 3]), [4, NA()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -2727,16 +2220,16 @@
         });
       });
     }
-    function Cg() {
-      return _A(this, void 0, void 0, function() {
+    function hA() {
+      return JA(this, void 0, void 0, function() {
         var A;
-        return $A(this, function(g) {
+        return OA(this, function(g) {
           switch (g.label) {
             case 0:
               return (A = oA(lA.supportSkillAvailable, {
                 region: [device.width / 3, device.height / 4]
               }))
-                ? [4, Ag()]
+                ? [4, wA()]
                 : (console.verbose('支援技能不可用'), [2]);
             case 1:
               return (
@@ -2749,12 +2242,12 @@
         });
       });
     }
-    function tg() {
-      return _A(this, void 0, void 0, function() {
-        return $A(this, function(A) {
+    function xA() {
+      return JA(this, void 0, void 0, function() {
+        return OA(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, eg()];
+              return A.trys.push([0, 2, , 3]), [4, GA()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -2765,10 +2258,10 @@
         });
       });
     }
-    function eg() {
-      return _A(this, void 0, void 0, function() {
+    function GA() {
+      return JA(this, void 0, void 0, function() {
         var A, g;
-        return $A(this, function(I) {
+        return OA(this, function(I) {
           return (
             (A = device.width / 2),
             (g = device.height / 2),
@@ -2779,10 +2272,10 @@
         });
       });
     }
-    function ng() {
-      return _A(this, void 0, void 0, function() {
+    function FA() {
+      return JA(this, void 0, void 0, function() {
         var A, g;
-        return $A(this, function(I) {
+        return OA(this, function(I) {
           switch (I.label) {
             case 0:
               (A = device.width / 2), (g = device.height / 2), (I.label = 1);
@@ -2804,7 +2297,7 @@
         });
       });
     }
-    var rg = function(A, g, I, C) {
+    var LA = function(A, g, I, C) {
         return new (I || (I = Promise))(function(t, e) {
           function n(A) {
             try {
@@ -2834,7 +2327,7 @@
           u((C = C.apply(A, g || [])).next());
         });
       },
-      ug = function(A, g) {
+      DA = function(A, g) {
         var I,
           C,
           t,
@@ -2922,9 +2415,1004 @@
           };
         }
       };
+    function yA() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return [4, gg()];
+            case 1:
+              return A.sent(), [4, YA()];
+            case 2:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function YA() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 2, , 3]), [4, KA()];
+            case 1:
+              return A.sent(), [3, 3];
+            case 2:
+              return A.sent(), [3, 3];
+            case 3:
+              return [2];
+          }
+        });
+      });
+    }
+    function KA() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return oA(lA.menuButton), toastLog('进入战斗'), [4, dA(1e3)];
+            case 1:
+              return A.sent(), [4, xA()];
+            case 2:
+              return A.sent(), [4, dA(500)];
+            case 3:
+              return A.sent(), [4, xA()];
+            case 4:
+              return A.sent(), [4, dA(500)];
+            case 5:
+              return A.sent(), [4, HA()];
+            case 6:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function HA() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 4, , 6]), [4, FA()];
+            case 1:
+              return A.sent(), [4, FA()];
+            case 2:
+              return A.sent(), qA(), [4, _A()];
+            case 3:
+              return A.sent(), [3, 6];
+            case 4:
+              return A.sent(), toastLog('战斗中'), [4, HA()];
+            case 5:
+              return A.sent(), [3, 6];
+            case 6:
+              return [2];
+          }
+        });
+      });
+    }
+    function _A() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return (
+                zA(lA.continueButtonRed), toastLog('退房~退房~'), [4, dA(2e3)]
+              );
+            case 1:
+              return A.sent(), [4, pA(lA.noContinueButton)];
+            case 2:
+              return A.sent(), [4, pA(lA.continueButtonRed)];
+            case 3:
+              return A.sent(), [4, $A()];
+            case 4:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function $A() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 3, , 6]), [4, dA(1e3)];
+            case 1:
+              return A.sent(), toastLog('找房间'), [4, Ag()];
+            case 2:
+              return A.sent(), [3, 6];
+            case 3:
+              return A.sent(), GA(), [4, dA(1e3)];
+            case 4:
+              return A.sent(), [4, $A()];
+            case 5:
+              return A.sent(), [3, 6];
+            case 6:
+              return [2];
+          }
+        });
+      });
+    }
+    function Ag() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return [4, dA(1e3)];
+            case 1:
+              return (
+                A.sent(),
+                zA(lA.ex),
+                toastLog('选房间'),
+                [4, mA(lA.exWhite, { timeout: 5e3 })]
+              );
+            case 2:
+              return A.sent(), [4, mA(lA.findTeam, { timeout: 5e3 })];
+            case 3:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function gg() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 2, , 3]), toastLog('准备中'), [4, Ig()];
+            case 1:
+              return A.sent(), [3, 3];
+            case 2:
+              return A.sent(), pA(lA.teamReadyButton), [3, 3];
+            case 3:
+              return [2];
+          }
+        });
+      });
+    }
+    function Ig() {
+      return LA(this, void 0, void 0, function() {
+        return DA(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return zA(lA.startBattleButton), [4, dA(3e3)];
+            case 1:
+              return (
+                A.sent(),
+                pA(lA.cancelButton),
+                pA(lA.stillStartButtonRed),
+                pA(lA.closeButton),
+                pA(lA.cancelButton),
+                [2]
+              );
+          }
+        });
+      });
+    }
+    var Cg = function(A, g, I, C) {
+        return new (I || (I = Promise))(function(t, e) {
+          function n(A) {
+            try {
+              u(C.next(A));
+            } catch (A) {
+              e(A);
+            }
+          }
+          function r(A) {
+            try {
+              u(C.throw(A));
+            } catch (A) {
+              e(A);
+            }
+          }
+          function u(A) {
+            var g;
+            A.done
+              ? t(A.value)
+              : ((g = A.value),
+                g instanceof I
+                  ? g
+                  : new I(function(A) {
+                      A(g);
+                    })).then(n, r);
+          }
+          u((C = C.apply(A, g || [])).next());
+        });
+      },
+      tg = function(A, g) {
+        var I,
+          C,
+          t,
+          e,
+          n = {
+            label: 0,
+            sent: function() {
+              if (1 & t[0]) throw t[1];
+              return t[1];
+            },
+            trys: [],
+            ops: []
+          };
+        return (
+          (e = { next: r(0), throw: r(1), return: r(2) }),
+          'function' == typeof Symbol &&
+            (e[Symbol.iterator] = function() {
+              return this;
+            }),
+          e
+        );
+        function r(e) {
+          return function(r) {
+            return (function(e) {
+              if (I) throw new TypeError('Generator is already executing.');
+              for (; n; )
+                try {
+                  if (
+                    ((I = 1),
+                    C &&
+                      (t =
+                        2 & e[0]
+                          ? C.return
+                          : e[0]
+                          ? C.throw || ((t = C.return) && t.call(C), 0)
+                          : C.next) &&
+                      !(t = t.call(C, e[1])).done)
+                  )
+                    return t;
+                  switch (((C = 0), t && (e = [2 & e[0], t.value]), e[0])) {
+                    case 0:
+                    case 1:
+                      t = e;
+                      break;
+                    case 4:
+                      return n.label++, { value: e[1], done: !1 };
+                    case 5:
+                      n.label++, (C = e[1]), (e = [0]);
+                      continue;
+                    case 7:
+                      (e = n.ops.pop()), n.trys.pop();
+                      continue;
+                    default:
+                      if (
+                        !(t = (t = n.trys).length > 0 && t[t.length - 1]) &&
+                        (6 === e[0] || 2 === e[0])
+                      ) {
+                        n = 0;
+                        continue;
+                      }
+                      if (3 === e[0] && (!t || (e[1] > t[0] && e[1] < t[3]))) {
+                        n.label = e[1];
+                        break;
+                      }
+                      if (6 === e[0] && n.label < t[1]) {
+                        (n.label = t[1]), (t = e);
+                        break;
+                      }
+                      if (t && n.label < t[2]) {
+                        (n.label = t[2]), n.ops.push(e);
+                        break;
+                      }
+                      t[2] && n.ops.pop(), n.trys.pop();
+                      continue;
+                  }
+                  e = g.call(A, n);
+                } catch (A) {
+                  (e = [6, A]), (C = 0);
+                } finally {
+                  I = t = 0;
+                }
+              if (5 & e[0]) throw e[1];
+              return { value: e[0] ? e[1] : void 0, done: !0 };
+            })([e, r]);
+          };
+        }
+      };
+    function eg() {
+      return Cg(this, void 0, void 0, function() {
+        return tg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return (
+                (function() {
+                  var A = vA(
+                    [
+                      lA.levelSelectMaster,
+                      lA.levelSelectExpert,
+                      lA.levelSelectStandard,
+                      lA.levelSelectBeginner
+                    ],
+                    { id: 'level-select' }
+                  );
+                  if (!A) throw new Error('请至关卡选择页面再开始');
+                  click(A.x, A.y);
+                })(),
+                [4, ng()]
+              );
+            case 1:
+              return (
+                A.sent(),
+                log('检测到正在进入第一关卡'),
+                [4, PA({ id: 'stage-1-loading' })]
+              );
+            case 2:
+              return A.sent(), toastLog('检测到已进入第一关卡'), [4, rg()];
+            case 3:
+              return A.sent(), toastLog('检测到正在进入第二关卡'), [4, ug()];
+            case 4:
+              return A.sent(), [4, ag()];
+            case 5:
+              return (
+                A.sent(),
+                [
+                  4,
+                  jA(!0, lA.levelSelect, {
+                    timeout: 6e4,
+                    id: 'level-select',
+                    onDelay: ZA
+                  })
+                ]
+              );
+            case 6:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function ng() {
+      return Cg(this, void 0, void 0, function() {
+        return tg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return [
+                4,
+                SA(
+                  {
+                    image: lA.supportSelectButton,
+                    timeout: 3e4,
+                    id: 'support-select',
+                    onDelay: ZA
+                  },
+                  {
+                    image: lA.startBattleButton,
+                    id: 'start-battle',
+                    timeout: 3e4,
+                    onDelay: ZA
+                  },
+                  {
+                    image: lA.loadingText,
+                    id: 'stage-1-loading',
+                    timeout: 3e4,
+                    onDelay: ZA
+                  }
+                )
+              ];
+            case 1:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function rg() {
+      return Cg(this, void 0, void 0, function() {
+        return tg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return (
+                pA(lA.autoBattleSwitchOff, { id: 'auto-battle-switch-off' }),
+                [4, jA(!0, lA.loadingText, { id: 'stage-2-loading' })]
+              );
+            case 1:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function ug() {
+      return Cg(this, void 0, void 0, function() {
+        return tg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return [
+                4,
+                kA(!0, [lA.rareItem], {
+                  timeout: 6e4,
+                  onDelay: function() {
+                    ZA(), pA(lA.menuButton, { id: 'menu-button' });
+                  },
+                  id: 'rare-item'
+                })
+              ];
+            case 1:
+              return A.sent(), [4, dA(500)];
+            case 2:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
     function ag() {
-      return rg(this, void 0, void 0, function() {
-        return ug(this, function(A) {
+      return Cg(this, void 0, void 0, function() {
+        var A, g;
+        return tg(this, function(I) {
+          switch (I.label) {
+            case 0:
+              return (
+                (A = oA(lA.rareItem, { id: 'rare-item' })),
+                (g = [
+                  A.x,
+                  A.y + lA.rareItem.getHeight(),
+                  lA.rareItem.getWidth(),
+                  lA.rareItem.getHeight()
+                ]),
+                cA(lA.x0, { id: 'x0', region: g }) ? [4, lg()] : [3, 2]
+              );
+            case 1:
+              return I.sent(), [3, 3];
+            case 2:
+              !(function() {
+                toastLog('成功刷到稀有物品, 继续完成战斗');
+                for (
+                  ;
+                  !pA(lA.continueButtonBlue, {
+                    id: 'finish-phrase-continue-button'
+                  });
+
+                )
+                  pA(lA.okButton, { id: 'finish-phrase-ok-button' }),
+                    pA(lA.closeButton, { id: 'finish-phrase-close-button' }),
+                    pA(lA.cancelButton, { id: 'finish-phrase-cancel-button' }),
+                    pA(lA.tapButton, { id: 'finish-phrase-tap-button' }),
+                    pA(lA.nextText, { id: 'finish-phrase-next-text' });
+              })(),
+                (I.label = 3);
+            case 3:
+              return [2];
+          }
+        });
+      });
+    }
+    function lg() {
+      return Cg(this, void 0, void 0, function() {
+        return tg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return (
+                log('没有刷到稀有物品, 直接下一轮'),
+                zA(lA.giveUpButtonBlue, { id: 'give-up-button-1' }),
+                [4, dA(500)]
+              );
+            case 1:
+              return (
+                A.sent(),
+                [
+                  4,
+                  mA(lA.giveUpButtonBlue, {
+                    timeout: 5e3,
+                    id: 'give-up-button-2'
+                  })
+                ]
+              );
+            case 2:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    var og = function(A, g, I, C) {
+        return new (I || (I = Promise))(function(t, e) {
+          function n(A) {
+            try {
+              u(C.next(A));
+            } catch (A) {
+              e(A);
+            }
+          }
+          function r(A) {
+            try {
+              u(C.throw(A));
+            } catch (A) {
+              e(A);
+            }
+          }
+          function u(A) {
+            var g;
+            A.done
+              ? t(A.value)
+              : ((g = A.value),
+                g instanceof I
+                  ? g
+                  : new I(function(A) {
+                      A(g);
+                    })).then(n, r);
+          }
+          u((C = C.apply(A, g || [])).next());
+        });
+      },
+      cg = function(A, g) {
+        var I,
+          C,
+          t,
+          e,
+          n = {
+            label: 0,
+            sent: function() {
+              if (1 & t[0]) throw t[1];
+              return t[1];
+            },
+            trys: [],
+            ops: []
+          };
+        return (
+          (e = { next: r(0), throw: r(1), return: r(2) }),
+          'function' == typeof Symbol &&
+            (e[Symbol.iterator] = function() {
+              return this;
+            }),
+          e
+        );
+        function r(e) {
+          return function(r) {
+            return (function(e) {
+              if (I) throw new TypeError('Generator is already executing.');
+              for (; n; )
+                try {
+                  if (
+                    ((I = 1),
+                    C &&
+                      (t =
+                        2 & e[0]
+                          ? C.return
+                          : e[0]
+                          ? C.throw || ((t = C.return) && t.call(C), 0)
+                          : C.next) &&
+                      !(t = t.call(C, e[1])).done)
+                  )
+                    return t;
+                  switch (((C = 0), t && (e = [2 & e[0], t.value]), e[0])) {
+                    case 0:
+                    case 1:
+                      t = e;
+                      break;
+                    case 4:
+                      return n.label++, { value: e[1], done: !1 };
+                    case 5:
+                      n.label++, (C = e[1]), (e = [0]);
+                      continue;
+                    case 7:
+                      (e = n.ops.pop()), n.trys.pop();
+                      continue;
+                    default:
+                      if (
+                        !(t = (t = n.trys).length > 0 && t[t.length - 1]) &&
+                        (6 === e[0] || 2 === e[0])
+                      ) {
+                        n = 0;
+                        continue;
+                      }
+                      if (3 === e[0] && (!t || (e[1] > t[0] && e[1] < t[3]))) {
+                        n.label = e[1];
+                        break;
+                      }
+                      if (6 === e[0] && n.label < t[1]) {
+                        (n.label = t[1]), (t = e);
+                        break;
+                      }
+                      if (t && n.label < t[2]) {
+                        (n.label = t[2]), n.ops.push(e);
+                        break;
+                      }
+                      t[2] && n.ops.pop(), n.trys.pop();
+                      continue;
+                  }
+                  e = g.call(A, n);
+                } catch (A) {
+                  (e = [6, A]), (C = 0);
+                } finally {
+                  I = t = 0;
+                }
+              if (5 & e[0]) throw e[1];
+              return { value: e[0] ? e[1] : void 0, done: !0 };
+            })([e, r]);
+          };
+        }
+      };
+    function vg() {
+      return og(this, void 0, void 0, function() {
+        return cg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return [4, dg()];
+            case 1:
+              return A.sent(), [4, fg()];
+            case 2:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function fg() {
+      return og(this, void 0, void 0, function() {
+        return cg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 2, , 3]), [4, ig()];
+            case 1:
+              return A.sent(), [3, 3];
+            case 2:
+              return A.sent(), pA(lA.continueButtonRed), [3, 3];
+            case 3:
+              return [2];
+          }
+        });
+      });
+    }
+    function ig() {
+      return og(this, void 0, void 0, function() {
+        return cg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return (
+                zA(lA.continueButtonRed),
+                [4, mA(lA.nextBattleBlue, { timeout: 5e3 })]
+              );
+            case 1:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function dg() {
+      return og(this, void 0, void 0, function() {
+        return cg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 2, , 3]), [4, sg()];
+            case 1:
+              return A.sent(), [3, 3];
+            case 2:
+              return A.sent(), pA(lA.teamReadyButton), [3, 3];
+            case 3:
+              return [2];
+          }
+        });
+      });
+    }
+    function sg() {
+      return og(this, void 0, void 0, function() {
+        return cg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return zA(lA.startBattleButton), [4, dA(3e3)];
+            case 1:
+              return (
+                A.sent(),
+                pA(lA.cancelButton),
+                pA(lA.stillStartButtonRed),
+                pA(lA.closeButton),
+                pA(lA.cancelButton),
+                [2]
+              );
+          }
+        });
+      });
+    }
+    var Vg = function(A, g, I, C) {
+        return new (I || (I = Promise))(function(t, e) {
+          function n(A) {
+            try {
+              u(C.next(A));
+            } catch (A) {
+              e(A);
+            }
+          }
+          function r(A) {
+            try {
+              u(C.throw(A));
+            } catch (A) {
+              e(A);
+            }
+          }
+          function u(A) {
+            var g;
+            A.done
+              ? t(A.value)
+              : ((g = A.value),
+                g instanceof I
+                  ? g
+                  : new I(function(A) {
+                      A(g);
+                    })).then(n, r);
+          }
+          u((C = C.apply(A, g || [])).next());
+        });
+      },
+      bg = function(A, g) {
+        var I,
+          C,
+          t,
+          e,
+          n = {
+            label: 0,
+            sent: function() {
+              if (1 & t[0]) throw t[1];
+              return t[1];
+            },
+            trys: [],
+            ops: []
+          };
+        return (
+          (e = { next: r(0), throw: r(1), return: r(2) }),
+          'function' == typeof Symbol &&
+            (e[Symbol.iterator] = function() {
+              return this;
+            }),
+          e
+        );
+        function r(e) {
+          return function(r) {
+            return (function(e) {
+              if (I) throw new TypeError('Generator is already executing.');
+              for (; n; )
+                try {
+                  if (
+                    ((I = 1),
+                    C &&
+                      (t =
+                        2 & e[0]
+                          ? C.return
+                          : e[0]
+                          ? C.throw || ((t = C.return) && t.call(C), 0)
+                          : C.next) &&
+                      !(t = t.call(C, e[1])).done)
+                  )
+                    return t;
+                  switch (((C = 0), t && (e = [2 & e[0], t.value]), e[0])) {
+                    case 0:
+                    case 1:
+                      t = e;
+                      break;
+                    case 4:
+                      return n.label++, { value: e[1], done: !1 };
+                    case 5:
+                      n.label++, (C = e[1]), (e = [0]);
+                      continue;
+                    case 7:
+                      (e = n.ops.pop()), n.trys.pop();
+                      continue;
+                    default:
+                      if (
+                        !(t = (t = n.trys).length > 0 && t[t.length - 1]) &&
+                        (6 === e[0] || 2 === e[0])
+                      ) {
+                        n = 0;
+                        continue;
+                      }
+                      if (3 === e[0] && (!t || (e[1] > t[0] && e[1] < t[3]))) {
+                        n.label = e[1];
+                        break;
+                      }
+                      if (6 === e[0] && n.label < t[1]) {
+                        (n.label = t[1]), (t = e);
+                        break;
+                      }
+                      if (t && n.label < t[2]) {
+                        (n.label = t[2]), n.ops.push(e);
+                        break;
+                      }
+                      t[2] && n.ops.pop(), n.trys.pop();
+                      continue;
+                  }
+                  e = g.call(A, n);
+                } catch (A) {
+                  (e = [6, A]), (C = 0);
+                } finally {
+                  I = t = 0;
+                }
+              if (5 & e[0]) throw e[1];
+              return { value: e[0] ? e[1] : void 0, done: !0 };
+            })([e, r]);
+          };
+        }
+      };
+    function Eg() {
+      return Vg(this, void 0, void 0, function() {
+        return bg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return [4, mg()];
+            case 1:
+              return A.sent(), qA(), [4, zg()];
+            case 2:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function zg() {
+      return Vg(this, void 0, void 0, function() {
+        return bg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 2, , 3]), [4, pg()];
+            case 1:
+              return A.sent(), [3, 3];
+            case 2:
+              return A.sent(), pA(lA.continueButtonRed), [3, 3];
+            case 3:
+              return [2];
+          }
+        });
+      });
+    }
+    function pg() {
+      return Vg(this, void 0, void 0, function() {
+        return bg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return (
+                zA(lA.continueButtonRed),
+                [4, mA(lA.nextBattleBlue, { timeout: 5e3 })]
+              );
+            case 1:
+              return A.sent(), [2];
+          }
+        });
+      });
+    }
+    function mg() {
+      return Vg(this, void 0, void 0, function() {
+        return bg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return A.trys.push([0, 2, , 3]), [4, Zg()];
+            case 1:
+              return A.sent(), [3, 3];
+            case 2:
+              return A.sent(), pA(lA.teamReadyButton), [3, 3];
+            case 3:
+              return [2];
+          }
+        });
+      });
+    }
+    function Zg() {
+      return Vg(this, void 0, void 0, function() {
+        return bg(this, function(A) {
+          switch (A.label) {
+            case 0:
+              return zA(lA.startBattleButton), [4, dA(1e3)];
+            case 1:
+              return (
+                A.sent(),
+                pA(lA.not4pplStart),
+                pA(lA.stillStartButtonRed),
+                pA(lA.closeButton),
+                pA(lA.not4pplStart),
+                [2]
+              );
+          }
+        });
+      });
+    }
+    var Rg = function(A, g, I, C) {
+        return new (I || (I = Promise))(function(t, e) {
+          function n(A) {
+            try {
+              u(C.next(A));
+            } catch (A) {
+              e(A);
+            }
+          }
+          function r(A) {
+            try {
+              u(C.throw(A));
+            } catch (A) {
+              e(A);
+            }
+          }
+          function u(A) {
+            var g;
+            A.done
+              ? t(A.value)
+              : ((g = A.value),
+                g instanceof I
+                  ? g
+                  : new I(function(A) {
+                      A(g);
+                    })).then(n, r);
+          }
+          u((C = C.apply(A, g || [])).next());
+        });
+      },
+      Sg = function(A, g) {
+        var I,
+          C,
+          t,
+          e,
+          n = {
+            label: 0,
+            sent: function() {
+              if (1 & t[0]) throw t[1];
+              return t[1];
+            },
+            trys: [],
+            ops: []
+          };
+        return (
+          (e = { next: r(0), throw: r(1), return: r(2) }),
+          'function' == typeof Symbol &&
+            (e[Symbol.iterator] = function() {
+              return this;
+            }),
+          e
+        );
+        function r(e) {
+          return function(r) {
+            return (function(e) {
+              if (I) throw new TypeError('Generator is already executing.');
+              for (; n; )
+                try {
+                  if (
+                    ((I = 1),
+                    C &&
+                      (t =
+                        2 & e[0]
+                          ? C.return
+                          : e[0]
+                          ? C.throw || ((t = C.return) && t.call(C), 0)
+                          : C.next) &&
+                      !(t = t.call(C, e[1])).done)
+                  )
+                    return t;
+                  switch (((C = 0), t && (e = [2 & e[0], t.value]), e[0])) {
+                    case 0:
+                    case 1:
+                      t = e;
+                      break;
+                    case 4:
+                      return n.label++, { value: e[1], done: !1 };
+                    case 5:
+                      n.label++, (C = e[1]), (e = [0]);
+                      continue;
+                    case 7:
+                      (e = n.ops.pop()), n.trys.pop();
+                      continue;
+                    default:
+                      if (
+                        !(t = (t = n.trys).length > 0 && t[t.length - 1]) &&
+                        (6 === e[0] || 2 === e[0])
+                      ) {
+                        n = 0;
+                        continue;
+                      }
+                      if (3 === e[0] && (!t || (e[1] > t[0] && e[1] < t[3]))) {
+                        n.label = e[1];
+                        break;
+                      }
+                      if (6 === e[0] && n.label < t[1]) {
+                        (n.label = t[1]), (t = e);
+                        break;
+                      }
+                      if (t && n.label < t[2]) {
+                        (n.label = t[2]), n.ops.push(e);
+                        break;
+                      }
+                      t[2] && n.ops.pop(), n.trys.pop();
+                      continue;
+                  }
+                  e = g.call(A, n);
+                } catch (A) {
+                  (e = [6, A]), (C = 0);
+                } finally {
+                  I = t = 0;
+                }
+              if (5 & e[0]) throw e[1];
+              return { value: e[0] ? e[1] : void 0, done: !0 };
+            })([e, r]);
+          };
+        }
+      };
+    function Ug() {
+      return Rg(this, void 0, void 0, function() {
+        return Sg(this, function(A) {
           switch (A.label) {
             case 0:
               return (
@@ -2944,13 +3432,13 @@
               throw (A.sent(), new Error('队伍战力不足, 无法通关'));
             case 2:
               return (
-                Ig(),
+                qA(),
                 (function() {
-                  _A(this, void 0, void 0, function() {
-                    return $A(this, function(A) {
+                  JA(this, void 0, void 0, function() {
+                    return OA(this, function(A) {
                       switch (A.label) {
                         case 0:
-                          return A.trys.push([0, 2, , 3]), [4, Cg()];
+                          return A.trys.push([0, 2, , 3]), [4, hA()];
                         case 1:
                           return A.sent(), [3, 3];
                         case 2:
@@ -2961,7 +3449,7 @@
                     });
                   });
                 })(),
-                [4, lg()]
+                [4, Xg()]
               );
             case 3:
               return A.sent(), [2];
@@ -2969,12 +3457,12 @@
         });
       });
     }
-    function lg() {
-      return rg(this, void 0, void 0, function() {
-        return ug(this, function(A) {
+    function Xg() {
+      return Rg(this, void 0, void 0, function() {
+        return Sg(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, og()];
+              return A.trys.push([0, 2, , 3]), [4, Bg()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -2985,9 +3473,9 @@
         });
       });
     }
-    function og() {
-      return rg(this, void 0, void 0, function() {
-        return ug(this, function(A) {
+    function Bg() {
+      return Rg(this, void 0, void 0, function() {
+        return Sg(this, function(A) {
           switch (A.label) {
             case 0:
               return (
@@ -3002,7 +3490,7 @@
         });
       });
     }
-    var cg = function(A, g, I, C) {
+    var Mg = function(A, g, I, C) {
         return new (I || (I = Promise))(function(t, e) {
           function n(A) {
             try {
@@ -3032,7 +3520,7 @@
           u((C = C.apply(A, g || [])).next());
         });
       },
-      vg = function(A, g) {
+      Qg = function(A, g) {
         var I,
           C,
           t,
@@ -3120,26 +3608,26 @@
           };
         }
       };
-    function fg() {
-      return cg(this, void 0, void 0, function() {
-        return vg(this, function(A) {
+    function Wg() {
+      return Mg(this, void 0, void 0, function() {
+        return Qg(this, function(A) {
           switch (A.label) {
             case 0:
               return [4, sA()];
             case 1:
-              return A.sent(), Ig(), [4, ig()];
+              return A.sent(), qA(), [4, kg()];
             case 2:
               return A.sent(), [2];
           }
         });
       });
     }
-    function ig() {
-      return cg(this, void 0, void 0, function() {
-        return vg(this, function(A) {
+    function kg() {
+      return Mg(this, void 0, void 0, function() {
+        return Qg(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, dg()];
+              return A.trys.push([0, 2, , 3]), [4, Tg()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -3150,9 +3638,9 @@
         });
       });
     }
-    function dg() {
-      return cg(this, void 0, void 0, function() {
-        return vg(this, function(A) {
+    function Tg() {
+      return Mg(this, void 0, void 0, function() {
+        return Qg(this, function(A) {
           switch (A.label) {
             case 0:
               return (
@@ -3165,7 +3653,7 @@
         });
       });
     }
-    var sg = function(A, g, I, C) {
+    var jg = function(A, g, I, C) {
         return new (I || (I = Promise))(function(t, e) {
           function n(A) {
             try {
@@ -3195,7 +3683,7 @@
           u((C = C.apply(A, g || [])).next());
         });
       },
-      Vg = function(A, g) {
+      Pg = function(A, g) {
         var I,
           C,
           t,
@@ -3283,24 +3771,24 @@
           };
         }
       };
-    function bg() {
-      return sg(this, void 0, void 0, function() {
-        return Vg(this, function(A) {
+    function Jg() {
+      return jg(this, void 0, void 0, function() {
+        return Pg(this, function(A) {
           switch (A.label) {
             case 0:
-              return pA(lA.teamReadyButton), [4, Eg()];
+              return pA(lA.teamReadyButton), [4, Og()];
             case 1:
               return A.sent(), [2];
           }
         });
       });
     }
-    function Eg() {
-      return sg(this, void 0, void 0, function() {
-        return Vg(this, function(A) {
+    function Og() {
+      return jg(this, void 0, void 0, function() {
+        return Pg(this, function(A) {
           switch (A.label) {
             case 0:
-              return A.trys.push([0, 2, , 3]), [4, zg()];
+              return A.trys.push([0, 2, , 3]), [4, wg()];
             case 1:
               return A.sent(), [3, 3];
             case 2:
@@ -3311,9 +3799,9 @@
         });
       });
     }
-    function zg() {
-      return sg(this, void 0, void 0, function() {
-        return Vg(this, function(A) {
+    function wg() {
+      return jg(this, void 0, void 0, function() {
+        return Pg(this, function(A) {
           switch (A.label) {
             case 0:
               return zA(lA.continueButtonBlue), [4, mA(lA.nextBattleBlue)];
@@ -3323,7 +3811,18 @@
         });
       });
     }
-    var pg = function(A, g, I, C) {
+    function Ng() {
+      var A,
+        g = 10,
+        I = 1;
+      function C() {
+        console.log(I.toString()), I === g && clearInterval(A), (I += 1);
+      }
+      C(), (A = setInterval(C, 1e3));
+    }
+    var qg = {};
+    var hg = I(0),
+      xg = function(A, g, I, C) {
         return new (I || (I = Promise))(function(t, e) {
           function n(A) {
             try {
@@ -3353,7 +3852,7 @@
           u((C = C.apply(A, g || [])).next());
         });
       },
-      mg = function(A, g) {
+      Gg = function(A, g) {
         var I,
           C,
           t,
@@ -3441,509 +3940,19 @@
           };
         }
       };
-    function Zg() {
-      return pg(this, void 0, void 0, function() {
-        return mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return [4, Ug()];
-            case 1:
-              return A.sent(), Ig(), [4, Rg()];
-            case 2:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function Rg() {
-      return pg(this, void 0, void 0, function() {
-        return mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return A.trys.push([0, 2, , 3]), [4, Sg()];
-            case 1:
-              return A.sent(), [3, 3];
-            case 2:
-              return A.sent(), pA(lA.continueButtonRed), [3, 3];
-            case 3:
-              return [2];
-          }
-        });
-      });
-    }
-    function Sg() {
-      return pg(this, void 0, void 0, function() {
-        return mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return (
-                zA(lA.continueButtonRed),
-                [4, mA(lA.nextBattleBlue, { timeout: 5e3 })]
-              );
-            case 1:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function Ug() {
-      return pg(this, void 0, void 0, function() {
-        return mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return A.trys.push([0, 2, , 3]), [4, Xg()];
-            case 1:
-              return A.sent(), [3, 3];
-            case 2:
-              return A.sent(), pA(lA.teamReadyButton), [3, 3];
-            case 3:
-              return [2];
-          }
-        });
-      });
-    }
-    function Xg() {
-      return pg(this, void 0, void 0, function() {
-        return mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return zA(lA.startBattleButton), [4, dA(1e3)];
-            case 1:
-              return (
-                A.sent(),
-                pA(lA.not4pplStart),
-                pA(lA.stillStartButtonRed),
-                pA(lA.closeButton),
-                pA(lA.not4pplStart),
-                [2]
-              );
-          }
-        });
-      });
-    }
-    var Bg = function(A, g, I, C) {
-        return new (I || (I = Promise))(function(t, e) {
-          function n(A) {
-            try {
-              u(C.next(A));
-            } catch (A) {
-              e(A);
-            }
-          }
-          function r(A) {
-            try {
-              u(C.throw(A));
-            } catch (A) {
-              e(A);
-            }
-          }
-          function u(A) {
-            var g;
-            A.done
-              ? t(A.value)
-              : ((g = A.value),
-                g instanceof I
-                  ? g
-                  : new I(function(A) {
-                      A(g);
-                    })).then(n, r);
-          }
-          u((C = C.apply(A, g || [])).next());
-        });
-      },
-      Mg = function(A, g) {
-        var I,
-          C,
-          t,
-          e,
-          n = {
-            label: 0,
-            sent: function() {
-              if (1 & t[0]) throw t[1];
-              return t[1];
-            },
-            trys: [],
-            ops: []
-          };
-        return (
-          (e = { next: r(0), throw: r(1), return: r(2) }),
-          'function' == typeof Symbol &&
-            (e[Symbol.iterator] = function() {
-              return this;
-            }),
-          e
-        );
-        function r(e) {
-          return function(r) {
-            return (function(e) {
-              if (I) throw new TypeError('Generator is already executing.');
-              for (; n; )
-                try {
-                  if (
-                    ((I = 1),
-                    C &&
-                      (t =
-                        2 & e[0]
-                          ? C.return
-                          : e[0]
-                          ? C.throw || ((t = C.return) && t.call(C), 0)
-                          : C.next) &&
-                      !(t = t.call(C, e[1])).done)
-                  )
-                    return t;
-                  switch (((C = 0), t && (e = [2 & e[0], t.value]), e[0])) {
-                    case 0:
-                    case 1:
-                      t = e;
-                      break;
-                    case 4:
-                      return n.label++, { value: e[1], done: !1 };
-                    case 5:
-                      n.label++, (C = e[1]), (e = [0]);
-                      continue;
-                    case 7:
-                      (e = n.ops.pop()), n.trys.pop();
-                      continue;
-                    default:
-                      if (
-                        !(t = (t = n.trys).length > 0 && t[t.length - 1]) &&
-                        (6 === e[0] || 2 === e[0])
-                      ) {
-                        n = 0;
-                        continue;
-                      }
-                      if (3 === e[0] && (!t || (e[1] > t[0] && e[1] < t[3]))) {
-                        n.label = e[1];
-                        break;
-                      }
-                      if (6 === e[0] && n.label < t[1]) {
-                        (n.label = t[1]), (t = e);
-                        break;
-                      }
-                      if (t && n.label < t[2]) {
-                        (n.label = t[2]), n.ops.push(e);
-                        break;
-                      }
-                      t[2] && n.ops.pop(), n.trys.pop();
-                      continue;
-                  }
-                  e = g.call(A, n);
-                } catch (A) {
-                  (e = [6, A]), (C = 0);
-                } finally {
-                  I = t = 0;
-                }
-              if (5 & e[0]) throw e[1];
-              return { value: e[0] ? e[1] : void 0, done: !0 };
-            })([e, r]);
-          };
-        }
-      };
-    function Qg() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return [4, Og()];
-            case 1:
-              return A.sent(), [4, Wg()];
-            case 2:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function Wg() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return A.trys.push([0, 2, , 3]), [4, kg()];
-            case 1:
-              return A.sent(), [3, 3];
-            case 2:
-              return A.sent(), [3, 3];
-            case 3:
-              return [2];
-          }
-        });
-      });
-    }
-    function kg() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return oA(lA.menuButton), toastLog('进入战斗'), [4, dA(1e3)];
-            case 1:
-              return A.sent(), [4, tg()];
-            case 2:
-              return A.sent(), [4, dA(500)];
-            case 3:
-              return A.sent(), [4, tg()];
-            case 4:
-              return A.sent(), [4, dA(500)];
-            case 5:
-              return A.sent(), [4, Tg()];
-            case 6:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function Tg() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return A.trys.push([0, 4, , 6]), [4, ng()];
-            case 1:
-              return A.sent(), [4, ng()];
-            case 2:
-              return A.sent(), Ig(), [4, jg()];
-            case 3:
-              return A.sent(), [3, 6];
-            case 4:
-              return A.sent(), toastLog('战斗中'), [4, Tg()];
-            case 5:
-              return A.sent(), [3, 6];
-            case 6:
-              return [2];
-          }
-        });
-      });
-    }
-    function jg() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return (
-                zA(lA.continueButtonRed), toastLog('退房~退房~'), [4, dA(2e3)]
-              );
-            case 1:
-              return A.sent(), [4, pA(lA.noContinueButton)];
-            case 2:
-              return A.sent(), [4, pA(lA.continueButtonRed)];
-            case 3:
-              return A.sent(), [4, Pg()];
-            case 4:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function Pg() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return A.trys.push([0, 3, , 6]), [4, dA(1e3)];
-            case 1:
-              return A.sent(), toastLog('找房间'), [4, Jg()];
-            case 2:
-              return A.sent(), [3, 6];
-            case 3:
-              return A.sent(), eg(), [4, dA(1e3)];
-            case 4:
-              return A.sent(), [4, Pg()];
-            case 5:
-              return A.sent(), [3, 6];
-            case 6:
-              return [2];
-          }
-        });
-      });
-    }
-    function Jg() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return [4, dA(1e3)];
-            case 1:
-              return (
-                A.sent(),
-                zA(lA.ex),
-                toastLog('选房间'),
-                [4, mA(lA.exWhite, { timeout: 5e3 })]
-              );
-            case 2:
-              return A.sent(), [4, mA(lA.findTeam, { timeout: 5e3 })];
-            case 3:
-              return A.sent(), [2];
-          }
-        });
-      });
-    }
-    function Og() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return A.trys.push([0, 2, , 3]), toastLog('准备中'), [4, wg()];
-            case 1:
-              return A.sent(), [3, 3];
-            case 2:
-              return A.sent(), pA(lA.teamReadyButton), [3, 3];
-            case 3:
-              return [2];
-          }
-        });
-      });
-    }
-    function wg() {
-      return Bg(this, void 0, void 0, function() {
-        return Mg(this, function(A) {
-          switch (A.label) {
-            case 0:
-              return zA(lA.startBattleButton), [4, dA(3e3)];
-            case 1:
-              return (
-                A.sent(),
-                pA(lA.cancelButton),
-                pA(lA.stillStartButtonRed),
-                pA(lA.closeButton),
-                pA(lA.cancelButton),
-                [2]
-              );
-          }
-        });
-      });
-    }
-    var Ng = {};
-    var qg = I(0),
-      hg = function(A, g, I, C) {
-        return new (I || (I = Promise))(function(t, e) {
-          function n(A) {
-            try {
-              u(C.next(A));
-            } catch (A) {
-              e(A);
-            }
-          }
-          function r(A) {
-            try {
-              u(C.throw(A));
-            } catch (A) {
-              e(A);
-            }
-          }
-          function u(A) {
-            var g;
-            A.done
-              ? t(A.value)
-              : ((g = A.value),
-                g instanceof I
-                  ? g
-                  : new I(function(A) {
-                      A(g);
-                    })).then(n, r);
-          }
-          u((C = C.apply(A, g || [])).next());
-        });
-      },
-      xg = function(A, g) {
-        var I,
-          C,
-          t,
-          e,
-          n = {
-            label: 0,
-            sent: function() {
-              if (1 & t[0]) throw t[1];
-              return t[1];
-            },
-            trys: [],
-            ops: []
-          };
-        return (
-          (e = { next: r(0), throw: r(1), return: r(2) }),
-          'function' == typeof Symbol &&
-            (e[Symbol.iterator] = function() {
-              return this;
-            }),
-          e
-        );
-        function r(e) {
-          return function(r) {
-            return (function(e) {
-              if (I) throw new TypeError('Generator is already executing.');
-              for (; n; )
-                try {
-                  if (
-                    ((I = 1),
-                    C &&
-                      (t =
-                        2 & e[0]
-                          ? C.return
-                          : e[0]
-                          ? C.throw || ((t = C.return) && t.call(C), 0)
-                          : C.next) &&
-                      !(t = t.call(C, e[1])).done)
-                  )
-                    return t;
-                  switch (((C = 0), t && (e = [2 & e[0], t.value]), e[0])) {
-                    case 0:
-                    case 1:
-                      t = e;
-                      break;
-                    case 4:
-                      return n.label++, { value: e[1], done: !1 };
-                    case 5:
-                      n.label++, (C = e[1]), (e = [0]);
-                      continue;
-                    case 7:
-                      (e = n.ops.pop()), n.trys.pop();
-                      continue;
-                    default:
-                      if (
-                        !(t = (t = n.trys).length > 0 && t[t.length - 1]) &&
-                        (6 === e[0] || 2 === e[0])
-                      ) {
-                        n = 0;
-                        continue;
-                      }
-                      if (3 === e[0] && (!t || (e[1] > t[0] && e[1] < t[3]))) {
-                        n.label = e[1];
-                        break;
-                      }
-                      if (6 === e[0] && n.label < t[1]) {
-                        (n.label = t[1]), (t = e);
-                        break;
-                      }
-                      if (t && n.label < t[2]) {
-                        (n.label = t[2]), n.ops.push(e);
-                        break;
-                      }
-                      t[2] && n.ops.pop(), n.trys.pop();
-                      continue;
-                  }
-                  e = g.call(A, n);
-                } catch (A) {
-                  (e = [6, A]), (C = 0);
-                } finally {
-                  I = t = 0;
-                }
-              if (5 & e[0]) throw e[1];
-              return { value: e[0] ? e[1] : void 0, done: !0 };
-            })([e, r]);
-          };
-        }
-      };
-    function Gg() {
-      return hg(this, void 0, void 0, function() {
+    function Fg() {
+      return xg(this, void 0, void 0, function() {
         var A, g;
-        return xg(this, function(I) {
+        return Gg(this, function(I) {
           switch (I.label) {
             case 0:
               return C.currentTask ? [3, 3] : [4, dA(1e3)];
             case 1:
-              return I.sent(), [4, Gg()];
+              return I.sent(), [4, Fg()];
             case 2:
               return I.sent(), [2];
             case 3:
-              if (!(A = Ng[C.currentTask]))
+              if (!(A = qg[C.currentTask]))
                 throw new Error('Unknown task: ' + C.currentTask);
               console.log('运行任务: ' + C.currentTask), (I.label = 4);
             case 4:
@@ -3954,7 +3963,7 @@
               return (
                 (g = I.sent()),
                 console.show(),
-                console.error(qg.b + ': ' + g),
+                console.error(hg.b + ': ' + g),
                 device.vibrate(500),
                 (C.currentTask = void 0),
                 [3, 7]
@@ -3962,16 +3971,16 @@
             case 7:
               return [4, dA(1e3)];
             case 8:
-              return I.sent(), [4, Gg()];
+              return I.sent(), [4, Fg()];
             case 9:
               return I.sent(), [2];
           }
         });
       });
     }
-    var Fg =
+    var Lg =
         '<frame gravity="center">\n    <spinner id="taskSpinner" entries="${entries}" spinnerMode="dialog" bg="#77ffffff" />\n</frame>',
-      Lg = function() {
+      Dg = function() {
         for (var A = 0, g = 0, I = arguments.length; g < I; g++)
           A += arguments[g].length;
         var C = Array(A),
@@ -3981,10 +3990,10 @@
             C[t] = e[n];
         return C;
       },
-      Dg = '停止';
-    function yg() {
-      var A = Lg([Dg], Object.keys(Ng)),
-        g = Fg.replace(/\${entries}/g, A.join('|')),
+      yg = '停止';
+    function Yg() {
+      var A = Dg([yg], Object.keys(qg)),
+        g = Lg.replace(/\${entries}/g, A.join('|')),
         I = floaty.window(g);
       return (
         I.setAdjustEnabled(!0),
@@ -3993,7 +4002,7 @@
           A.taskSpinner.setOnItemSelectedListener({
             onItemSelected: function() {
               var g = A.taskSpinner.getSelectedItem();
-              C.currentTask = g === Dg ? void 0 : g;
+              C.currentTask = g === yg ? void 0 : g;
             },
             onNothingSelected: function() {
               throw new Error('This should never happen');
@@ -4001,7 +4010,7 @@
           }),
             C.taskChangeListeners.push(function(I) {
               ui.run(function() {
-                A.taskSpinner.setSelection(g.indexOf(I || Dg));
+                A.taskSpinner.setSelection(g.indexOf(I || yg));
               });
             });
         })(I, A),
@@ -4009,7 +4018,7 @@
         { window: I, spinnerItems: A }
       );
     }
-    var Yg = function(A, g) {
+    var Kg = function(A, g) {
       var I,
         C,
         t,
@@ -4128,23 +4137,24 @@
       });
     })(void 0, void 0, void 0, function() {
       var A;
-      return Yg(this, function(g) {
+      return Kg(this, function(g) {
         switch (g.label) {
           case 0:
-            console.log(qg.a + ': ' + qg.b), (g.label = 1);
+            console.log(hg.a + ': ' + hg.b), (g.label = 1);
           case 1:
             return (
               g.trys.push([1, 3, , 4]),
               launch('com.nintendo.zaga'),
               device.keepScreenDim(99999),
-              (Ng.重复战斗 = ag),
-              (Ng.组队重复战斗 = fg),
-              (Ng.简单组队队员 = bg),
-              (Ng.无限池 = DA),
-              (Ng.无限池自动战斗 = Qg),
-              (Ng.无限池公会版 = Zg),
-              (Ng.刷稀有 = wA),
-              yg(),
+              (qg.重复战斗 = Ug),
+              (qg.组队重复战斗 = Wg),
+              (qg.简单组队队员 = Jg),
+              (qg.无限池 = vg),
+              (qg.无限池自动战斗 = yA),
+              (qg.无限池公会版 = Eg),
+              (qg.刷稀有 = eg),
+              (qg.text = Ng),
+              Yg(),
               (I = (function(A, g) {
                 void 0 === A && (A = device.width),
                   void 0 === g && (g = device.height);
@@ -4173,7 +4183,7 @@
               })()),
               toastLog('Load assets: ' + I),
               Object.assign(lA, aA[I]),
-              [4, Gg()]
+              [4, Fg()]
             );
           case 2:
             return g.sent(), [3, 4];

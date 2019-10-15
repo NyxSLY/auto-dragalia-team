@@ -1,10 +1,16 @@
-const target = { a: 1, b: 2 };
-const source = { b: 4, c: 5 };
+function printNumbers(from, to) {
+  let current = from;
 
-const returnedTarget = Object.assign(target, source);
+  function go() {
+    console.log(current);
+    if (current == to) {
+      clearInterval(timerId);
+    }
+    current++;
+  }
 
-console.log(target.b);
-// expected output: Object { a: 1, b: 4, c: 5 }
+  go();
+  let timerId = setInterval(go, 1000);
+}
 
-console.log(returnedTarget);
-// expected output: Object { a: 1, b: 4, c: 5 }
+printNumbers(1, 20);

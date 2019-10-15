@@ -1,19 +1,17 @@
-import { img } from '@/assets/images';
-import { clickImage, tryClickImage, waitAndClickImage } from '@/utils/image';
+export function test(): void {
+  const fro: number = 1;
+  const to: number = 10;
+  let current: number = fro;
+  let timerId: number;
 
-export async function repeatRaidTeamSimple(): Promise<void> {
-  tryClickImage(img.teamReadyButton);
-  await tryRepeatWithStaminaTeamMember();
-}
-
-async function tryRepeatWithStaminaTeamMember(): Promise<void> {
-  try {
-    await repeatWithStamina();
-  } catch {
-    tryClickImage(img.continueButtonBlue);
+  function go(): void {
+    console.log(current.toString());
+    if (current === to) {
+      clearInterval(timerId);
+    }
+    current += 1;
   }
-}
-async function repeatWithStamina(): Promise<void> {
-  const pos: Point = clickImage(img.continueButtonBlue);
-  await waitAndClickImage(img.nextBattleBlue);
+
+  go();
+  timerId = setInterval(go, 1000);
 }

@@ -14,9 +14,10 @@
     "baseUrl": ".",
     "sourceMap": true,
     "types": ["autojs-dev"],
+    "allowJs": true,
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "src/**/*.js"]
 }
