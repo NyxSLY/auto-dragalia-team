@@ -1,6 +1,6 @@
 {
   "name": "auto-dragalia-slsy",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "main": "src/main.ts",
   "repository": "https://github.com/NyxSLY/auto-dragalia.git",
@@ -11,7 +11,7 @@
     "watch": "webpack --watch",
     "capture": "autojs cap",
     "code-generate:images": "node ./scripts/generate-images-code.js",
-    "adb:push": "node ./scripts/push.js",
+    "push": "node ./scripts/push.js",
     "release": "standard-version"
   },
   "dependencies": {

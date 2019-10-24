@@ -53,7 +53,7 @@
     I((I.s = 56));
 })([
   function(A) {
-    A.exports = JSON.parse('{"a":"auto-dragalia-slsy","b":"0.1.5"}');
+    A.exports = JSON.parse('{"a":"auto-dragalia-slsy","b":"0.1.6"}');
   },
   function(A, g) {
     A.exports =
@@ -1576,6 +1576,7 @@
                 A.sent(),
                 pA(lA.cancelButton),
                 pA(lA.stillStartButtonRed),
+                pA(lA.stillStartButton),
                 pA(lA.closeButton),
                 pA(lA.cancelButton),
                 [2]

@@ -5,7 +5,6 @@ export async function wait(delay: number): Promise<void> {
   if (delay <= 0) {
     return;
   }
-
   return new Promise((resolve: () => void): void => {
     setTimeout(resolve, delay);
   });
@@ -24,6 +23,7 @@ async function captainReady(): Promise<void> {
   await wait(2000);
   tryClickImage(img.cancelButton);
   tryClickImage(img.stillStartButtonRed); // 这里是红色按钮
+  tryClickImage(img.stillStartButton);
   tryClickImage(img.closeButton);
   tryClickImage(img.cancelButton);
 }
