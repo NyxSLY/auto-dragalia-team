@@ -3081,7 +3081,7 @@
         return cg(this, function(A) {
           switch (A.label) {
             case 0:
-              return zA(lA.startBattleButton), [4, dA(3e3)];
+              return zA(lA.startBattleButton), [4, dA(1e3)];
             case 1:
               return (
                 A.sent(),
@@ -3971,7 +3971,7 @@
       });
     }
     var Fg =
-        '<frame gravity="center">\n    <spinner id="taskSpinner" entries="${entries}" spinnerMode="dialog" bg="#77ffffff" />\n</frame>',
+        '<frame gravity="center">\r\n    <spinner id="taskSpinner" entries="${entries}" spinnerMode="dialog" bg="#77ffffff" />\r\n</frame>',
       Lg = function() {
         for (var A = 0, g = 0, I = arguments.length; g < I; g++)
           A += arguments[g].length;
